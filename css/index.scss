@@ -1,0 +1,93 @@
+@import "global/_color";
+@import "global/_dim";
+html, body{
+    height:100%;
+    margin: 0px;
+    user-select: none;
+}
+
+body{
+    background:$background;
+    background-repeat: repeat;
+   
+}
+@mixin border-radius($radius){
+    border-radius:$radius;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.container{
+    height:100%;
+    padding:0;
+}
+
+.content{
+     
+    padding:$frame_width;
+    padding-top:20%;
+    
+}
+.greeting{
+    
+    display:table;
+    background:$cBackground;
+    margin-left:-50%;
+    padding-left:50%;
+    padding-right:$background-padding;
+    margin-bottom: 50px;
+    @include border-radius($border-radius_m);
+    box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
+}
+.no_margin{
+    
+    margin:0;
+}
+
+.introline{
+    
+    margin-bottom: 2rem;
+    display:table;
+    position: relative;
+    padding-left:$background-padding;
+    padding-right:$background-padding;
+    @include border-radius($border-radius_m);
+    border:2px dashed #000;
+}
+paper-ripple{
+    color:$cAttention;
+}
+.whole_container{
+    position: absolute;
+    height:100%;
+    width:100%;
+}
+.background_pic{
+    @extend .whole_container;
+    background:$background, url("../images/raven head.jpg");
+    background-repeat: repeat,no-repeat;
+    background-position: top right;
+    background-size:auto,contain;
+    background-blend-mode: multiply;
+    z-index:-2;  
+}
+.frame{
+    @extend .whole_container;
+    box-sizing: border-box;
+    @include border-radius($frame_width*2);
+    border:$frame_width solid rgba(255,255,255,0.2);
+    z-index:-1;
+}
+.footer{
+   
+    position: absolute;
+    bottom:-$frame_width;
+    height: $frame_width;
+}
+
+#ampersand{
+    @include border-radius(10px);
+    font-family: Helvetica,Ariel,sans-serif;
+    color:$cTextContrast;
+    background: $gradient;
+}
