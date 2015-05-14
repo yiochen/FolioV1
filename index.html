@@ -16,7 +16,7 @@
 
     <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" data-noprefix>
 
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -35,25 +35,51 @@
 </head>
 
 <body unresolved>
-
+    <template is="auto-binding" id="app">
     <div class="container">
         <div class="background_pic"></div>
         <div class="frame">
-            <div class="footer"> Social icons</div>
+            <div class="footer">
+                <paper-icon-button class="social" src="images/facebook.svg" style="height:20px;"></paper-icon-button>
+                <paper-icon-button class="social" src="images/google.svg" style="height:20px;"></paper-icon-button>
+                <paper-icon-button class="social" src="images/twitter.svg" style="height:20px;"></paper-icon-button>
+                <paper-icon-button class="social" src="images/github.svg" style="height:20px;"></paper-icon-button>
+            </div>
         </div>
         <div class="content">
-            <div class="greeting"><h1 class="no_margin">Hi, I'm Yiou</h1></div>
-            <div class="introline">
-                
-                <h1 class="no_margin">I am a designer </h1>
+            <div class="greeting">
+                <h1 class="no_margin">Hi, I'm <span class="hover_highlight">Yiou</span></h1>
+            </div>
+
+<!-- accordion start--------------------------------->
+            <div class="introline hover_highlight" on-click="{{toggle1}}">
+                <h2 class="no_margin">I'm a designer </h2>
                 <paper-ripple fit class="recenteringTouch"></paper-ripple>
             </div>
-            <div class="introline"><h1 class="no_margin"><span id="ampersand">&</span> developer</h1>
-            <paper-ripple fit class="recenteringTouch"></paper-ripple>
+            <core-collapse id="collapse" opened="{{col1}}">
+                <div class="item"><h5 class="no_margin">graphic design</h5></div>
+                <div class="item"><h5 class="no_margin">concept art</h5></div>
+                <div class="item"><h5 class="no_margin">fine art</h5></div>
+                <div class="item"><h5 class="no_margin">photography</h5></div>
+                <div class="item"><h5 class="no_margin">more</h5></div>
+            </core-collapse>
+            <div class="introline hover_highlight" on-click="{{toggle2}}">
+                <h2 class="no_margin"><span id="ampersand">&</span> developer</h2>
+                <paper-ripple fit class="recenteringTouch"></paper-ripple>
             </div>
+            <core-collapse id="collapse2" opened="{{col2}}">
+                <div class="item"><h5 class="no_margin">android</h5></div>
+                <div class="item"><h5 class="no_margin">front-end</h5></div>
+                <div class="item"><h5 class="no_margin">game</h5></div>
+                <div class="item"><h5 class="no_margin">more</h5></div>
+            </core-collapse>
+<!-- accordion end----------------------------------->
+            
+            <h5 class="hover_highlight">more about me  <paper-icon-button style="padding:0;" icon="arrow-forward"></paper-icon-button></h5>
         </div>
     </div>
     <script src="js/app.js"></script>
+    </template>
 </body>
 
 </html>

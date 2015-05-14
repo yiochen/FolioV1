@@ -7,22 +7,27 @@ html, body {
 /* line 9, F:/Practice/Polymer/portfolio/css/index.scss */
 body {
   background: url(../images/noise.png);
-  background-repeat: repeat; }
+  background-repeat: repeat;
+  overflow: hidden; }
 
-/* line 20, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 22, F:/Practice/Polymer/portfolio/css/index.scss */
+.hover_highlight:hover {
+  color: aqua; }
+
+/* line 26, F:/Practice/Polymer/portfolio/css/index.scss */
 .container {
   height: 100%;
   padding: 0; }
 
-/* line 25, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 31, F:/Practice/Polymer/portfolio/css/index.scss */
 .content {
   padding: 40px;
   padding-top: 20%; }
 
-/* line 31, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 37, F:/Practice/Polymer/portfolio/css/index.scss */
 .greeting {
   display: table;
-  background: lightgrey;
+  background: #FFF;
   margin-left: -50%;
   padding-left: 50%;
   padding-right: 20px;
@@ -33,12 +38,13 @@ body {
   border-top-right-radius: 0px;
   box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28); }
 
-/* line 42, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 49, F:/Practice/Polymer/portfolio/css/index.scss */
 .no_margin {
   margin: 0; }
 
-/* line 47, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 54, F:/Practice/Polymer/portfolio/css/index.scss */
 .introline {
+  text-shadow: 1px 2px 3px white;
   margin-bottom: 2rem;
   display: table;
   position: relative;
@@ -50,17 +56,17 @@ body {
   border-top-right-radius: 0px;
   border: 2px dashed #000; }
 
-/* line 57, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 65, F:/Practice/Polymer/portfolio/css/index.scss */
 paper-ripple {
   color: aqua; }
 
-/* line 60, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 68, F:/Practice/Polymer/portfolio/css/index.scss */
 .whole_container, .background_pic, .frame {
   position: absolute;
   height: 100%;
   width: 100%; }
 
-/* line 65, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 73, F:/Practice/Polymer/portfolio/css/index.scss */
 .background_pic {
   background: url(../images/noise.png), url("../images/raven head.jpg");
   background-repeat: repeat,no-repeat;
@@ -69,30 +75,41 @@ paper-ripple {
   background-blend-mode: multiply;
   z-index: -2; }
 
-/* line 74, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 83, F:/Practice/Polymer/portfolio/css/index.scss */
 .frame {
   box-sizing: border-box;
   border-radius: 80px;
   border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
-  border: 40px solid rgba(255, 255, 255, 0.2);
+  border: 40px solid rgba(0, 255, 255, 0.5);
   z-index: -1; }
 
-/* line 81, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 90, F:/Practice/Polymer/portfolio/css/index.scss */
 .footer {
   position: absolute;
   bottom: -40px;
   height: 40px; }
 
-/* line 88, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 97, F:/Practice/Polymer/portfolio/css/index.scss */
 #ampersand {
-  border-radius: 10px;
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
   font-family: Helvetica,Ariel,sans-serif;
-  color: #bbbbbb;
-  background: linear-gradient(0deg, #232526 10%, #414345 90%); }
+  color: aqua;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5); }
+
+/* line 102, F:/Practice/Polymer/portfolio/css/index.scss */
+.social {
+  position: relative;
+  color: #a9edff; }
+
+/* line 106, F:/Practice/Polymer/portfolio/css/index.scss */
+.item {
+  text-transform: uppercase;
+  background: rgba(204, 204, 204, 0.9);
+  display: inline-block;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 20px; }
 
 /*# sourceMappingURL=index.css.map */

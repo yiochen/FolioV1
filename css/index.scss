@@ -9,14 +9,20 @@ html, body{
 body{
     background:$background;
     background-repeat: repeat;
-   
+   overflow: hidden;
 }
+
 @mixin border-radius($radius){
     border-radius:$radius;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
 }
+
+.hover_highlight:hover{
+    color:$cAttention;
+}
+
 .container{
     height:100%;
     padding:0;
@@ -39,13 +45,14 @@ body{
     @include border-radius($border-radius_m);
     box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
 }
+
 .no_margin{
     
     margin:0;
 }
 
 .introline{
-    
+    text-shadow:1px 2px 3px rgba(255,255,255,1);
     margin-bottom: 2rem;
     display:table;
     position: relative;
@@ -54,6 +61,7 @@ body{
     @include border-radius($border-radius_m);
     border:2px dashed #000;
 }
+
 paper-ripple{
     color:$cAttention;
 }
@@ -71,11 +79,12 @@ paper-ripple{
     background-blend-mode: multiply;
     z-index:-2;  
 }
+
 .frame{
     @extend .whole_container;
     box-sizing: border-box;
     @include border-radius($frame_width*2);
-    border:$frame_width solid rgba(255,255,255,0.2);
+    border:$frame_width solid rgba(red($cAttention),blue($cAttention),green($cAttention),0.5);
     z-index:-1;
 }
 .footer{
@@ -86,8 +95,21 @@ paper-ripple{
 }
 
 #ampersand{
-    @include border-radius(10px);
     font-family: Helvetica,Ariel,sans-serif;
-    color:$cTextContrast;
-    background: $gradient;
+    color:$cAttention;
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.50);
+}
+.social{
+    position: relative;
+    color: #a9edff;
+}
+.item{
+    text-transform: uppercase;
+    background:$cItemBackground;
+    display:inline-block;
+    margin-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
+    margin-left:20px;
+    
 }
