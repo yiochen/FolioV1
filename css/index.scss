@@ -1,5 +1,8 @@
 @import "global/_color";
 @import "global/_dim";
+@import "_normalize";
+@import "_skeleton";
+
 html, body{
     height:100%;
     margin: 0px;
@@ -13,10 +16,11 @@ body{
 }
 
 @mixin border-radius($radius){
-    border-radius:$radius;
+    //border-radius:$radius;
+    border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    
 }
 
 .hover_highlight:hover{
@@ -29,15 +33,15 @@ body{
 }
 
 .content{
-     
-    padding:$frame_width;
+    padding:$frame_width +5px; 
+}
+.move_down{
     padding-top:20%;
-    
 }
 .greeting{
     
     display:table;
-    background:$cBackground;
+    background:$cGreetBackground;
     margin-left:-50%;
     padding-left:50%;
     padding-right:$background-padding;
@@ -52,7 +56,7 @@ body{
 }
 
 .introline{
-    text-shadow:1px 2px 3px rgba(255,255,255,1);
+    background:$cContentBackground;
     margin-bottom: 2rem;
     display:table;
     position: relative;

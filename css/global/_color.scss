@@ -1,7 +1,8 @@
 $background:url(../images/noise.png);
 $cTextPrimary:#444;
 $cTextContrast:invert($cTextPrimary);
-$cBackground:#FFF;
-$cItemBackground:fade-out(darken($cBackground,20%),0.1);
+$cGreetBackground:#FFF;
+$cContentBackground:rgba(255,255,255,0.40);
+$cItemBackground:fade-out(darken($cGreetBackground,20%),0.1);
 $cAttention:aqua;
 $gradient: linear-gradient(0deg, #232526 10%, #414345 90%);

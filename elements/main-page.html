@@ -1,0 +1,75 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-collapse/core-collapse.html">
+<polymer-element name="main-page">
+    <template>
+        <link rel="stylesheet" href="../css/index.css">
+        <div class="content move_down">
+            <div class="greeting">
+                <h1 class="no_margin">Hi, I'm <span class="hover_highlight">Yiou</span></h1>
+            </div>
+
+            <!-- accordion start--------------------------------->
+            <div class="introline hover_highlight" on-click="{{toggle1}}">
+                <h2 class="no_margin">I'm a designer </h2>
+                <paper-ripple fit class="recenteringTouch"></paper-ripple>
+            </div>
+            <core-collapse id="collapse" opened="{{col1}}">
+                <div class="item">
+                    <h5 class="no_margin">graphic design</h5>
+                </div>
+                <div class="item">
+                    <h5 class="no_margin">concept art</h5>
+                </div>
+                <div class="item">
+                    <h5 class="no_margin">fine art</h5>
+                </div>
+                <div class="item">
+                    <h5 class="no_margin">photography</h5>
+                </div>
+                <div class="item">
+                    <h5 class="no_margin">more</h5>
+                </div>
+            </core-collapse>
+            <div class="introline hover_highlight" on-click="{{toggle2}}">
+                <h2 class="no_margin"><span id="ampersand">&</span> developer</h2>
+                <paper-ripple fit class="recenteringTouch"></paper-ripple>
+            </div>
+            <core-collapse id="collapse2" opened="{{col2}}">
+                <div class="item">
+                    <h5 class="no_margin">android</h5>
+                </div>
+                <div class="item">
+                    <h5 class="no_margin">front-end</h5>
+                </div>
+                <div class="item">
+                    <h5 class="no_margin">game</h5>
+                </div>
+                <div class="item">
+                    <h5 class="no_margin">more</h5>
+                </div>
+            </core-collapse>
+            <!-- accordion end----------------------------------->
+
+            <h5 class="hover_highlight">more about me  <paper-icon-button style="padding:0;" icon="arrow-forward"></paper-icon-button></h5>
+            <div style="float: left; clear:both"></div>
+        </div>
+    </template>
+    <script>
+        (function () {
+            Polymer({
+                col1: false,
+                col2: false,
+                toggle1: function (e) {
+                    this.col1 = !this.col1;
+                    this.col2 = false;
+                },
+                toggle2: function (e) {
+                    this.col1 = false;
+                    this.col2 = !this.col2;
+                }
+
+            });
+        })();
+    </script>
+
+</polymer-element>
