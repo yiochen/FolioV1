@@ -37,6 +37,7 @@
 
 <body unresolved>
     <template is="auto-binding" id="app">
+        
     <div class="container">
         <div class="background_pic"></div>
         <div class="frame">
@@ -50,25 +51,19 @@
         
         <core-pages selected="1">
             <main-page></main-page>
+            
             <project-page>
                 <div class="intro">
-                Hello this is the left side</div>
-                <card-view class="expand">
-                    <h3 class="caption"> hello this is a title</h3>
-                    <p class="description">This is a desc</p>
+                    Offendit nisi tamen officia quae. Senserit quorum senserit ubi magna illustriora 
+                    consequat irure appellat qui </div>
+                <core-ajax url="/data/projects.json" auto handleAs="json" on-core-response="{{handleProjectData}}"></core-ajax>
+                <template id="project" is="auto-binding" repeat="{{entry in response}}">
+                    <card-view class="expand">
+                    <h3 class="caption">{{entry.caption}}</h3>
+                    <p class="description">{{entry.description}}</p>
                 </card-view>
-                 <card-view class="expand">
-                    <h3 class="caption"> hello this is a title</h3>
-                    <p class="description">This is a desc</p>
-                </card-view>
-                 <card-view class="expand">
-                    <h3 class="caption"> hello this is a title</h3>
-                    <p class="description">This is a desc</p>
-                </card-view>
-                 <card-view class="expand">
-                    <h3 class="caption"> hello this is a title</h3>
-                    <p class="description">This is a desc</p>
-                </card-view>
+                </template>
+                
             </project-page>
             
         </core-pages>
