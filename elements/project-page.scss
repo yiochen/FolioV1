@@ -1,0 +1,15 @@
+@import "../css/index";
+
+.page_intro{
+    height:200px;
+    position:relative;
+    div{
+       
+        background:$superLight;
+        width:80%;
+        padding:20px 10px;
+        @include absolute_center;
+        
+    
+    }
+}

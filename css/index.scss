@@ -2,6 +2,7 @@
 @import "global/_dim";
 @import "_normalize";
 @import "_skeleton";
+@import "global/_common";
 
 html, body{
     height:100%;
@@ -33,7 +34,7 @@ body{
 }
 
 .content{
-    padding:$frame_width +5px; 
+    padding:$frame_width; 
 }
 .move_down{
     padding-top:20%;
@@ -88,7 +89,7 @@ paper-ripple{
     @extend .whole_container;
     box-sizing: border-box;
     @include border-radius($frame_width*2);
-    border:$frame_width solid rgba(red($cAttention),blue($cAttention),green($cAttention),0.5);
+    border:$frame_width solid fade-out($cBackground,0.5);
     z-index:-1;
 }
 .footer{

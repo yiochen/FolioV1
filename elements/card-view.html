@@ -1,0 +1,32 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-media-query/core-media-query.html">
+<link rel="import" href="../elements/lazy-image.html">
+<polymer-element name="card-view">
+    <template>
+        <!--<link rel="stylesheet" href="../css/index.css">-->
+        <link rel="stylesheet" href="card-view.css">
+        <div class="card">
+            <lazy-image image="https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg"></lazy-image>
+            <div class="overlay">
+                <div class="detail">
+                    <content class="caption"></content>
+                    <content class="description"></content>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </template>
+
+    <script>
+        (function () {
+            Polymer({
+
+
+            });
+        })();
+    </script>
+
+</polymer-element>

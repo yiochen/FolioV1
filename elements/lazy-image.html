@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="lazy-image" attributes="image">
+    <template>
+        <style>
+            #lazy {
+                height:100%;
+                display: block;
+                background-position: center;
+                background-size: cover;  
+            }
+            .initial{
+                opacity:0;
+                transition: opacity 0.5s ease;
+            }
+            .onlazyload {
+                opacity:1;
+                background: {{imageurl}};
+            }
+        </style>
+        <div id="lazy" class="initial" data-src="{{image}}">
+        </div>
+
+    </template>
+
+    <script>
+        Polymer({
+            ready: function () {
+                var img = new Image();
+                var poly = this;
+                img.onload = function () {
+                    poly.$.lazy.classList.add("onlazyload");
+                }
+                img.src = this.image;
+                this.imageurl = 'url(' + img.src + ')';
+            }
+        });
+    </script>
+
+</polymer-element>

@@ -1,0 +1,60 @@
+@import "../css/global/_dim";
+@import "../css/global/_color";
+.card {
+    margin: 0;
+    height: $card_height;
+    width: 100%;
+    position: relative;
+    
+    lazy-image{
+        position:absolute;
+        height:100%;
+        width:100%;
+    }
+    .overlay {
+        background: $halfLight;
+        transition: background 0.5s ease;
+        position:absolute;
+        height: 100%;
+        width: 100%;
+    }
+    .detail {
+        color: $cTextPrimary;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition:background 0.5s ease;
+    }
+    ::content .description {
+        display: none;
+    }
+    ::content .description, ::content .caption{
+        padding:0 $padding;
+        transition:background 0.5s ease;
+    }
+    
+    /* Larger than phablet (also point when grid becomes active) */
+    @media (min-width: 750px) {
+       
+            height: 300px;
+        ::content .description {
+            display: block;
+        }
+        lazy-image:hover{
+            filter:none;
+            -webkit-filter:none;
+        }
+       .overlay:hover{
+            background: transparent;
+            
+                ::content .description, ::content .caption {
+       background: $halfLight;
+        
+    }
+                
+            
+        }
+        
+    }
+    
+}
