@@ -1,34 +1,45 @@
-var app;
-var data;
 
 (function (document) {
     'use strict';
     
-    app = document.querySelector('#app');
-    app.project=document.querySelector('#project');
-    app.pages = document.querySelector('core-animated-pages');
-    app.goHome=function(e){
+    var data;
+    var app = document.querySelector('#app');
+    app.addEventListener('template-bound', function (e) {
+        alert('haha');
+        
+        app.project=document.querySelector('#project');
+        app.pages = document.querySelector('core-animated-pages');
+        app.goHome=function(e){
+            app.pages.selected=0;
+        }
+        app.goFolio=function(e){
+            app.pages.selected=1;
+        };
+        app.goBlog=function(e){
+            app.pages.selected=2; 
+        };
+        app.goAbout=function(e){
+            alert("about page is not done yet");
+        };
+        app.goContact=function(e){
+            alert("Contact page is not done yet");
+        };
         app.pages.selected=0;
-    }
-    app.goFolio=function(e){
-        app.pages.selected=1;
-    };
-    app.goBlog=function(e){
-        app.pages.selected=2; 
-    };
-    app.goAbout=function(e){
-        alert("about page is not done yet");
-    };
-    app.goContact=function(e){
-        alert("Contact page is not done yet");
-    };
+        app.handleProjectData = function (eve) {
+
+            app.project.response = eve.detail.response;
+            console.log(app.project.response);
+            
+        }
+    });
+    
     document.addEventListener('core-select',function(e){
         var eve=e.detail;
         if (eve.isSelected){
             document.body.scrollTop = document.documentElement.scrollTop = 0;
         }
     });
-    app.pages.selected=0;
+    
     document.addEventListener('next_page', function (e) {
         app.pages.selected = (app.pages.selected + 1) % app.pages.children.length;
     });
@@ -47,12 +58,7 @@ var data;
     //
     //    };
     //    request.send();
-    app.handleProjectData = function (eve) {
-
-            app.project.response = eve.detail.response;
-            console.log(app.project.response);
-            
-        }
+    
         // wrap document so it plays nice with other libraries
         // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
 })(wrap(document));
