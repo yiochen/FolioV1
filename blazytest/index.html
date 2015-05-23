@@ -2,6 +2,13 @@
 <html>
 
 <head>
+    <meta name="description" content="portfolio for yiou">
+    <meta name="author" content="yiou chen">
+    <meta name="theme-color" content="#00FFFF">
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>hello blazy</title>
     <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
 
@@ -9,31 +16,47 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/skeleton.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="import" href="../bower_components/core-animated-pages/core-animated-pages.html">
+    
     <style>
         body {
             color:white;
             background: black;
         }
         .box{
+            position:relative;
             height:200px;
             width:200px;
             background:green;
             overflow:auto;
         }
         .inner{
-            float:left;
+            position:relative;
             height:300px;
             width:100px;
             background:linear-gradient(0deg,black, white);
             
         }
+        .div1{
+            width:80%;
+            height:300px;
+            background-color:yellow;
+        }
+        .div2{
+            width:80%;
+            height:200px;
+            background-color:green;
+        }
     </style>
 </head>
 
 <body>
-    <div class="box">
-        <div class="inner"></div>
-    </div>
+    <template is="auto-binding" id="app">
+        <core-animated-pages transition="cross-fade">
+            <div class="div1"></div>
+            <div class="div2"></div>
+        </core-animated-pages>
+    </template> 
 </body>
 
 </html>

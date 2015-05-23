@@ -40,38 +40,43 @@
         <div class="window" >
             <div class="container">
                 <div class="background_pic"></div>
-                
             </div>
         </div>
-        <div class="window" >
-        <core-pages selected="null">
-            <main-page></main-page>
+        <div class="scroll_window" >
+        <core-animated-pages >
+            
+            <main-page ></main-page>
+           
             <!--------------------------------------------->
-            <project-page>
-                <div class="intro">
-                    Offendit nisi tamen officia quae. Senserit quorum senserit ubi magna illustriora consequat irure appellat qui </div>
-                <core-ajax url="/data/projects.json" auto handleAs="json" on-core-response="{{handleProjectData}}"></core-ajax>
 
-                <template id="project" is="auto-binding" repeat="{{entry in response}}">
-                    <card-view class="expand" background="{{entry.image}}">
-                        <h3 class="caption">{{entry.caption}}</h3>
-                        <p class="description">{{entry.description}}</p>
-                    </card-view>
-                </template>
+            <project-page >
+                <div class="intro">
+                    Offendit nisi tamen officia quae. Senserit quorum senserit ubi magna illustriora consequat irure appellat qui 
+                </div>
+                <core-ajax url="/data/projects.json" auto handleAs="json" on-core-response="{{handleProjectData}}"></core-ajax>
+                <div class="expand">
+                    <template id="project" is="auto-binding" repeat="{{entry in response}}">
+                        <card-view class="expand" background="{{entry.image}}">
+                            <h3 class="caption">{{entry.caption}}</h3>
+                            <p class="description">{{entry.description}}</p>
+                        </card-view>
+                    </template>
+                </div>
+
             </project-page>
+
             <!--------------------------------------------->
-            <article-page titleline="Hello world" date="12/15/2015" intro="This is a article about life and death">
+             <article-page titleline="Hello world" date="12/15/2015" intro="This is a article about life and death">
                 <p class="expand">E legam laboris, quibusdam ad magna ad proident aut arbitror a iis culpa nam quis nam multos incurreret despicationes, do cillum probant firmissimum hic ex cillum singulis o nisi mandaremus se sempiternum. Commodo qui iudicem. Amet nescius quo aliqua fore, eram imitarentur senserit multos pariatur aut est mentitum domesticarum hic ab non amet laboris. Ad magna aliquip, fore relinqueret probant labore quibusdam. Cillum occaecat qui familiaritatem, eu dolore o tamen e velit se se cillum fabulas, quo quid litteris occaecat. Do dolore ea summis et quo do reprehenderit an mandaremus ipsum non arbitror despicationes nam de si aliqua nisi fugiat ad et varias ne labore, ea nulla labore non ullamco ita de ut comprehenderit, nostrud do anim. Quis occaecat si eiusmod, ab aute ex minim ab incididunt ad dolore appellat, cernantur lorem expetendis.
                 </p>
-
             </article-page>
-        </core-pages>
+        </core-animated-pages>
         </div>
         <div class="window" style="pointer-events:none;">
             <div class="container">
             
                     <div class="navbar">
-                        <h5><span class="navitem hover_highlight" on-click="{{goFolio}}">Folio</span>|<span class="navitem hover_highlight" on-click="{{goBlog}}">Blog</span>|<span class="navitem hover_highlight" on-click="{{goAbout}}">About</span>|<span class="navitem hover_highlight" on-click="{{goContact}}">Contact</span>
+                       <h5 class="navbar_text"><paper-icon-button icon="home" style="float:left;" on-click="{{goHome}}"></paper-icon-button><span class="navitem hover_highlight" on-click="{{goFolio}}">Folio</span>|<span class="navitem hover_highlight" on-click="{{goBlog}}">Blog</span>|<span class="navitem hover_highlight" on-click="{{goAbout}}">About</span>|<span class="navitem hover_highlight" on-click="{{goContact}}">Contact</span>
                 </h5>
                     </div>
                     <div class="footer">

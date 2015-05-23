@@ -845,41 +845,33 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  position: absolute;
-  border-radius: 20px; }
+  position: fixed; }
 
 /* line 31, F:/Practice/Polymer/portfolio/css/index.scss */
-.hideoverflow {
-  height: 100%;
-  overflow: hidden; }
+.scroll_window {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute; }
 
-/* line 35, F:/Practice/Polymer/portfolio/css/index.scss */
-.clipoverflow {
-  height: 100%;
-  overflow: auto; }
-
-/* line 47, F:/Practice/Polymer/portfolio/css/index.scss */
-core-pages {
-  height: 100%; }
-
-/* line 50, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 55, F:/Practice/Polymer/portfolio/css/index.scss */
 .hover_highlight:hover {
   color: aqua; }
 
-/* line 54, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 59, F:/Practice/Polymer/portfolio/css/index.scss */
 .container {
-  height: 100%;
-  padding: 0; }
+  height: 100%; }
 
-/* line 60, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 64, F:/Practice/Polymer/portfolio/css/index.scss */
 .content {
   padding: 40px; }
 
-/* line 63, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 67, F:/Practice/Polymer/portfolio/css/index.scss */
 .move_down {
   padding-top: 20%; }
 
-/* line 66, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 70, F:/Practice/Polymer/portfolio/css/index.scss */
 .greeting {
   display: table;
   background: #FFF;
@@ -892,16 +884,23 @@ core-pages {
   border-top-left-radius: 0px;
   box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28); }
 
-/* line 77, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 81, F:/Practice/Polymer/portfolio/css/index.scss */
 .navitem {
   padding: 0 5px;
   color: #676767; }
 
-/* line 82, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 86, F:/Practice/Polymer/portfolio/css/index.scss */
+.navbar_text {
+  line-height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block; }
+
+/* line 92, F:/Practice/Polymer/portfolio/css/index.scss */
 .no_margin {
   margin: 0; }
 
-/* line 87, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 97, F:/Practice/Polymer/portfolio/css/index.scss */
 .introline {
   background: rgba(255, 255, 255, 0.4);
   margin-bottom: 2rem;
@@ -914,17 +913,17 @@ core-pages {
   border-top-left-radius: 0px;
   border: 2px dashed #000; }
 
-/* line 99, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 109, F:/Practice/Polymer/portfolio/css/index.scss */
 paper-ripple {
   color: aqua; }
 
-/* line 102, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 112, F:/Practice/Polymer/portfolio/css/index.scss */
 .whole_container, .background_pic {
   position: absolute;
   height: 100%;
   width: 100%; }
 
-/* line 107, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 117, F:/Practice/Polymer/portfolio/css/index.scss */
 .background_pic {
   background: url(../images/noise.png), url("../images/raven head.jpg");
   background-repeat: repeat,no-repeat;
@@ -933,18 +932,21 @@ paper-ripple {
   background-blend-mode: multiply;
   z-index: -2; }
 
-/* line 120, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 130, F:/Practice/Polymer/portfolio/css/index.scss */
 .navbar {
   position: absolute;
   top: 0;
   height: 40px;
+  width: 100%;
   pointer-events: auto;
   left: 50%;
   transform: translateX(-50%);
   color: #b3b3b3;
-  z-index: 10; }
+  z-index: 10;
+  display: flex;
+  justify-content: center; }
 
-/* line 130, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 145, F:/Practice/Polymer/portfolio/css/index.scss */
 .footer {
   text-align: center;
   position: absolute;
@@ -952,18 +954,18 @@ paper-ripple {
   height: 40px;
   pointer-events: auto; }
 
-/* line 138, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 154, F:/Practice/Polymer/portfolio/css/index.scss */
 #ampersand {
   font-family: Helvetica,Ariel,sans-serif;
   color: aqua;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5); }
 
-/* line 143, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 159, F:/Practice/Polymer/portfolio/css/index.scss */
 .social {
   position: relative;
   color: #a9edff; }
 
-/* line 148, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 164, F:/Practice/Polymer/portfolio/css/index.scss */
 .item {
   text-transform: uppercase;
   background: rgba(204, 204, 204, 0.9);
@@ -973,28 +975,25 @@ paper-ripple {
   padding-right: 5px;
   margin-left: 20px; }
 
+/* line 174, F:/Practice/Polymer/portfolio/css/index.scss */
+.space:after {
+  content: '';
+  display: block;
+  height: 40px; }
+
 /* line 3, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-.page_intro {
-  height: 200px;
-  position: relative; }
-  /* line 6, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-  .page_intro div {
-    background: rgba(255, 255, 255, 0.85);
-    width: 80%;
-    padding: 20px 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
+.page_intro div {
+  background: rgba(255, 255, 255, 0.85);
+  width: 80%;
+  padding: 20px 10px;
+  margin-left: auto;
+  margin-right: auto; }
 
 @media (min-width: 550px) {
-  /* line 18, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-  .page_intro {
-    position: relative; }
-    /* line 20, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-    .page_intro div {
-      background: transparent;
-      width: 100%;
-      padding: 0; } }
+  /* line 16, F:/Practice/Polymer/portfolio/elements/project-page.scss */
+  .page_intro div {
+    background: none;
+    width: 100%;
+    padding: 0; } }
 
 /*# sourceMappingURL=project-page.css.map */

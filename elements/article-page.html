@@ -3,7 +3,7 @@
 <polymer-element name="article-page" extend="page-info" attributes="titleline date intro">
     <template>
         <link rel="stylesheet" href="../elements/article-page.css">
-        <div class="clipoverflow">
+        
         <div class="container content">
             <div class="row">
                 <div class="three columns page_intro">
@@ -11,12 +11,12 @@
                     <h5>{{date}}</h5>
                     <h6>{{intro}}</h6>
                 </div>
-                <div class="nine columns page_content">
+                <div class="nine columns page_content space">
                     <content select=".expand"></content>
                 </div>
             </div>
         </div>
-            </div>
+            
     </template>
     <script>
         (function () {

@@ -6,7 +6,10 @@ var data;
     
     app = document.querySelector('#app');
     app.project=document.querySelector('#project');
-    app.pages = document.querySelector('core-pages');
+    app.pages = document.querySelector('core-animated-pages');
+    app.goHome=function(e){
+        app.pages.selected=0;
+    }
     app.goFolio=function(e){
         app.pages.selected=1;
     };
