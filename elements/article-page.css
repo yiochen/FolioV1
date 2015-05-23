@@ -973,28 +973,5 @@ paper-ripple {
   padding-right: 5px;
   margin-left: 20px; }
 
-/* line 3, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-.page_intro {
-  height: 200px;
-  position: relative; }
-  /* line 6, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-  .page_intro div {
-    background: rgba(255, 255, 255, 0.85);
-    width: 80%;
-    padding: 20px 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
 
-@media (min-width: 550px) {
-  /* line 18, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-  .page_intro {
-    position: relative; }
-    /* line 20, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-    .page_intro div {
-      background: transparent;
-      width: 100%;
-      padding: 0; } }
-
-/*# sourceMappingURL=project-page.css.map */
+/*# sourceMappingURL=article-page.css.map */

@@ -1,10 +1,13 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/core-collapse/core-collapse.html">
-<polymer-element name="main-page">
+<link rel="import" href="../elements/page-info.html">
+<polymer-element name="main-page" extend="page-info">
     <template>
         <link rel="stylesheet" href="../css/index.css">
-        <div class="content move_down">
-            <div class="greeting">
+        <div class="hideoverflow">
+        <div class="container content move_down">
+            
+             <div class="greeting">
                 <h1 class="no_margin">Hi, I'm <span class="hover_highlight">Yiou</span></h1>
             </div>
 
@@ -51,12 +54,18 @@
             <!-- accordion end----------------------------------->
 
             <h5 class="hover_highlight">more about me  <paper-icon-button style="padding:0;" icon="arrow-forward"></paper-icon-button></h5>
-            <div style="float: left; clear:both"></div>
-        </div>
+            
+            </div>
+           </div>
+        
     </template>
     <script>
         (function () {
             Polymer({
+
+                created:function(){
+
+                },
                 col1: false,
                 col2: false,
                 toggle1: function (e) {

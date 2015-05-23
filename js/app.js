@@ -1,12 +1,34 @@
 var app;
 var data;
+
 (function (document) {
     'use strict';
+    
     app = document.querySelector('#app');
     app.project=document.querySelector('#project');
+    app.pages = document.querySelector('core-pages');
+    app.goFolio=function(e){
+        app.pages.selected=1;
+    };
+    app.goBlog=function(e){
+        app.pages.selected=2; 
+    };
+    app.goAbout=function(e){
+        alert("about page is not done yet");
+    };
+    app.goContact=function(e){
+        alert("Contact page is not done yet");
+    };
+    document.addEventListener('core-select',function(e){
+        var eve=e.detail;
+//        if (eve.isSelected){
+//            document.querySelector('body').style.overflow=eve.item.overflow;
+//            document.body.scrollTop = document.documentElement.scrollTop = 0;
+//        }
+    });
+    app.pages.selected=0;
     document.addEventListener('next_page', function (e) {
-        var pages = document.querySelector('core-pages');
-        pages.selected = (pages.selected + 1) % pages.children.length;
+        app.pages.selected = (app.pages.selected + 1) % app.pages.children.length;
     });
     //    var request = new XMLHttpRequest();
     //    request.open('GET', '/data/projects.json', true);

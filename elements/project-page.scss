@@ -9,7 +9,20 @@
         width:80%;
         padding:20px 10px;
         @include absolute_center;
-        
-    
     }
+}
+.page_content{
+    
+}
+@media (min-width: 550px) {
+    .page_intro{
+    position:relative;
+    div{
+       
+        background:transparent;
+        width:100%;
+        padding:0;
+        
+    }
+}
 }

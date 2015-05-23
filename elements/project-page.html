@@ -1,18 +1,20 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-
-<polymer-element name="project-page">
+<link rel="import" href="../elements/page-info.html">
+<polymer-element name="project-page" extend="page-info">
     <template>
         <link rel="stylesheet" href="../elements/project-page.css">
-        <div class="content">
-            <div class="row">
-                <div class="three columns page_intro">
-                    <div>
-                        <content select=".intro"></content>
+        <div class="clipoverflow">
+            <div class="container content">
+                <div class="row">
+                    <div class="three columns page_intro">
+                        <div>
+                            <content select=".intro"></content>
+                        </div>
+
                     </div>
-                    
-                </div>
-                <div class="nine columns page_content">
-                    <content select=".expand"></content>
+                    <div class="nine columns page_content">
+                        <content select=".expand"></content>
+                    </div>
                 </div>
             </div>
         </div>
@@ -20,7 +22,7 @@
     <script>
         (function () {
             Polymer({
-
+                
             });
         })();
     </script>
