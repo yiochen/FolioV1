@@ -24,10 +24,9 @@ var data;
     };
     document.addEventListener('core-select',function(e){
         var eve=e.detail;
-//        if (eve.isSelected){
-//            document.querySelector('body').style.overflow=eve.item.overflow;
-//            document.body.scrollTop = document.documentElement.scrollTop = 0;
-//        }
+        if (eve.isSelected){
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        }
     });
     app.pages.selected=0;
     document.addEventListener('next_page', function (e) {
