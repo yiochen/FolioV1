@@ -5,7 +5,6 @@
     var data;
     var app = document.querySelector('#app');
     app.addEventListener('template-bound', function (e) {
-        alert('haha');
         
         app.project=document.querySelector('#project');
         app.pages = document.querySelector('core-animated-pages');
