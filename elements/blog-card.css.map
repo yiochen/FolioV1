@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "file": "blog-card.css",
+  "sources": [
+    "blog-card.scss",
+    "../css/global/_color.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": "AACA,AACI,AAAU,AACV,AAAQ,AACR,AAAO,AACP,ACMQ,ADLR,AAAS,AAGb,AACI,AAAQ,AAGZ,AAAW,AACH,AAAU,AAGlB,AACI,AAAS,AACT,AAAO,AACP,AAAM,AACN,AAAW,AACX,AAAO,AAKX,AACI,AAAgB",
+  "names": []
+}

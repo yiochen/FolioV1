@@ -981,5 +981,12 @@ paper-ripple {
   display: block;
   height: 40px; }
 
+/* line 6, F:/Practice/Polymer/portfolio/elements/article-page.scss */
+.page_content {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px; }
+  /* line 9, F:/Practice/Polymer/portfolio/elements/article-page.scss */
+  .page_content img {
+    max-width: 100%; }
 
 /*# sourceMappingURL=article-page.css.map */

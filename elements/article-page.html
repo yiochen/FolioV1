@@ -1,18 +1,16 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../elements/page-info.html">
-<polymer-element name="article-page" extend="page-info" attributes="titleline date intro">
+<polymer-element name="article-page" extend="page-info">
     <template>
         <link rel="stylesheet" href="../elements/article-page.css">
         
         <div class="container content">
             <div class="row">
                 <div class="three columns page_intro">
-                    <h1>{{titleline}}</h1>
+                    <h3>{{titleline}}</h3>
                     <h5>{{date}}</h5>
-                    <h6>{{intro}}</h6>
                 </div>
-                <div class="nine columns page_content space">
-                    <content select=".expand"></content>
+                <div class="nine columns page_content space" id="blog_body">
                 </div>
             </div>
         </div>
@@ -21,8 +19,10 @@
     <script>
         (function () {
             Polymer({
-                created:function(){
-                    this.overflow="visible";
+                titleline:"Title",
+                date:"date",
+                ready:function(){
+                    this.blogBody=this.$.blog_body;
                 }
             });
         })();

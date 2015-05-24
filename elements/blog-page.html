@@ -1,0 +1,57 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../elements/project-page.html">
+<link rel="import" href="../elements/blog-card.html">
+
+<polymer-element name="blog-page">
+    <template>
+        
+        <project-page>
+                <div class="intro">
+                    Because every blog needs a second site to show
+                </div>
+                <div class="expand">
+                    <template id="rack" is="auto-binding" repeat="{{post in posts}}">
+                        <blog-card titleline="{{post.title}}"
+                                   date="{{post.date}}"
+                                   blog="{{post.body}}"
+                                   on-click="{{expandBlog}}"></blog-card>
+                    </template>
+                </div>
+            </project-page>
+    
+     </template>
+
+    <script>
+        (function () {
+            Polymer({
+                expandBlog:function(e){
+                    
+                    app.pages.selected=app.article;
+                    var article=app.pages.children[app.article];
+                    article.titleline=e.target.titleline;
+                    article.date=e.target.date;
+                    article.blogBody.innerHTML=e.target.blog;
+                    
+                },
+                ready:function(){
+                    app.posts=(app.posts==null)?[]:app.posts;
+        
+                    aja()
+                        .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=0q6nbQaibqLbvTRQoOYiHqQEJbcHSMtgNIcdopG1NfVrBZF9b5&limit=10&offset=0')
+                        .type('jsonp')
+                        .on('success',function(data){
+                            for (var i=0;i<data.response.posts.length;i++){
+                                var post=app.posts[app.posts.length]={};
+                                post.title=data.response.posts[i].title;
+                                post.date=data.response.posts[i].date;
+                                post.id=data.response.posts[i].id;
+                                post.body=data.response.posts[i].body;
+                            }
+                            document.querySelector('html /deep/ #rack').posts=app.posts; 
+                        }).go();
+                }
+
+            });
+        })();
+    </script>
+</polymer-element>

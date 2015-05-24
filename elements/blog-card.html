@@ -1,0 +1,35 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="blog-card" attributes="titleline date blog">
+    <template>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/skeleton.css">
+        <link rel="stylesheet" href="blog-card.css">
+        <div class="card">
+            <div class="row">
+                <div class="eight columns">
+                    <h2 class="title">{{titleline}}</h2>
+                </div>
+                <div class="four columns">
+                    <h6 class="date">{{date}}</h6>
+                </div>
+            </div>
+            <div id="blog_body" class="row">
+            </div>
+            <div class="eclipse"></div>
+        </div>
+
+
+    </template>
+
+    <script>
+        (function () {
+            Polymer({
+                ready: function () {
+                    this.$.blog_body.innerHTML = this.blog;
+                }
+
+            });
+        })();
+    </script>
+</polymer-element>

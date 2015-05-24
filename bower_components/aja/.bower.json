@@ -1,0 +1,45 @@
+{
+  "name": "aja",
+  "description": "Asynchronous JavaScript And JavaScript/JSON(P) : Ajax without XML",
+  "homepage": "http://krampstudio.github.io/aja.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/krampstudio/aja.js.git"
+  },
+  "version": "0.3.4",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bertrand Chevrier",
+      "email": "chevrier.bertrand@gmail.com"
+    }
+  ],
+  "main": [
+    "src/aja.js",
+    "src/aja.min.js",
+    "src/aja.min.js.map",
+    "aja.min.js"
+  ],
+  "ignore": [
+    "node_modules",
+    "doc",
+    ".coverage"
+  ],
+  "keywords": [
+    "aja",
+    "ajax",
+    "xhr",
+    "aja.js",
+    "jsonp"
+  ],
+  "_release": "0.3.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.3.4",
+    "commit": "bea439dbb1ec6107ec6085e503c1449edebe81e6"
+  },
+  "_source": "git://github.com/krampstudio/aja.js.git",
+  "_target": "~0.3.4",
+  "_originalSource": "aja",
+  "_direct": true
+}

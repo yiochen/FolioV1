@@ -17,12 +17,13 @@
     <link rel="stylesheet" href="../css/skeleton.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="import" href="../bower_components/core-animated-pages/core-animated-pages.html">
-    
+    <script src="../bower_components/aja/src/aja.js"></script>
     <style>
         body {
             color:white;
             background: black;
         }
+/*
         .box{
             position:relative;
             height:200px;
@@ -47,15 +48,24 @@
             height:200px;
             background-color:green;
         }
+*/
     </style>
 </head>
 
 <body>
     <template is="auto-binding" id="app">
-        <core-animated-pages transition="cross-fade">
-            <div class="div1"></div>
-            <div class="div2"></div>
-        </core-animated-pages>
+        
+        <div id="output"></div>
+        <script>
+            var d;
+            aja()
+            .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=0q6nbQaibqLbvTRQoOYiHqQEJbcHSMtgNIcdopG1NfVrBZF9b5&filter=raw&limit=10&offset=0')
+            .type('jsonp')
+            .on('success',function(data){
+                d=data.response.posts[0].body;
+                document.querySelector('#output').innerHTML=d;
+            }).go();
+        </script>
     </template> 
 </body>
 

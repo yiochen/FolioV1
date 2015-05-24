@@ -1,33 +1,41 @@
-
+var app;
 (function (document) {
     'use strict';
     
     var data;
-    var app = document.querySelector('#app');
+    app = document.querySelector('#app');
+    app.home=0;
+    app.folio=1;
+    app.blog=2;
+    app.about=3;
+    app.contact=4;
+    app.article=5;
     app.addEventListener('template-bound', function (e) {
         
         app.project=document.querySelector('#project');
         app.pages = document.querySelector('core-animated-pages');
+        app.posts=[];
         app.goHome=function(e){
-            app.pages.selected=0;
+            app.pages.selected=app.home;
         }
         app.goFolio=function(e){
-            app.pages.selected=1;
+            app.pages.selected=app.folio;
         };
         app.goBlog=function(e){
-            app.pages.selected=2; 
+            app.pages.selected=app.blog; 
         };
         app.goAbout=function(e){
-            alert("about page is not done yet");
+            app.pages.selected=app.about;
         };
         app.goContact=function(e){
-            alert("Contact page is not done yet");
+            app.pages.selected=app.contact;
         };
         app.pages.selected=0;
+        
         app.handleProjectData = function (eve) {
 
             app.project.response = eve.detail.response;
-            console.log(app.project.response);
+            //console.log(app.project.response);
             
         }
     });

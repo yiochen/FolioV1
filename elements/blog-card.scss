@@ -1,0 +1,30 @@
+@import "../css/global/_color";
+.card {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    background: $superLight;
+    overflow:hidden;
+    
+}
+.row{
+    padding:10px;
+}
+#blog_body{
+    img{
+        max-width:100%;
+    }
+}
+.eclipse{
+    position:absolute;
+    height:40px;
+    width:100%;
+    background:linear-gradient(transparent,$superLight);
+    bottom:0;
+}
+.date {
+    
+}
+.title {
+    text-transform: uppercase;
+}
