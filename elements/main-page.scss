@@ -1,0 +1,47 @@
+@import "../css/global/_common";
+@import "../css/global/_color";
+@import "../css/global/_dim";
+.move_down{
+    padding-top:20%;
+}
+.greeting{
+    
+    display:table;
+    background:$cGreetBackground;
+    margin-left:-50%;
+    padding-left:50%;
+    padding-right:$background-padding;
+    margin-bottom: 50px;
+    box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
+}
+.navitem{
+    padding:0 5px;
+    color:$cTextPrimary;
+    
+}
+
+.introline{
+    background:$cContentBackground;
+    margin-bottom: 2rem;
+    display:table;
+    position: relative;
+    padding-left:$background-padding;
+    padding-right:$background-padding;
+    border:2px dashed #000;
+    
+}
+#ampersand{
+    font-family: Helvetica,Ariel,sans-serif;
+    color:$cAttention;
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.50);
+}
+.item{
+    text-transform: uppercase;
+    background:$cItemBackground;
+    display:inline-block;
+    margin-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
+    margin-left:20px;
+    
+}

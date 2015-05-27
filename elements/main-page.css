@@ -1,0 +1,46 @@
+/* line 4, F:/Practice/Polymer/portfolio/elements/main-page.scss */
+.move_down {
+  padding-top: 20%; }
+
+/* line 7, F:/Practice/Polymer/portfolio/elements/main-page.scss */
+.greeting {
+  display: table;
+  background: #FFF;
+  margin-left: -50%;
+  padding-left: 50%;
+  padding-right: 20px;
+  margin-bottom: 50px;
+  box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28); }
+
+/* line 17, F:/Practice/Polymer/portfolio/elements/main-page.scss */
+.navitem {
+  padding: 0 5px;
+  color: #676767; }
+
+/* line 23, F:/Practice/Polymer/portfolio/elements/main-page.scss */
+.introline {
+  background: rgba(255, 255, 255, 0.4);
+  margin-bottom: 2rem;
+  display: table;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 2px dashed #000; }
+
+/* line 33, F:/Practice/Polymer/portfolio/elements/main-page.scss */
+#ampersand {
+  font-family: Helvetica,Ariel,sans-serif;
+  color: aqua;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5); }
+
+/* line 38, F:/Practice/Polymer/portfolio/elements/main-page.scss */
+.item {
+  text-transform: uppercase;
+  background: rgba(204, 204, 204, 0.9);
+  display: inline-block;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 20px; }
+
+/*# sourceMappingURL=main-page.css.map */

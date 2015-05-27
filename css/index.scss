@@ -1,7 +1,5 @@
 @import "global/_color";
 @import "global/_dim";
-@import "_normalize";
-@import "_skeleton";
 @import "global/_common";
 
 html, body{
@@ -35,26 +33,14 @@ body{
     right:0;
     position:absolute;
 }
-//.hideoverflow{
-//    height:100%;
-//    overflow:hidden;
-//}
-//.clipoverflow{
-//    height:100%;
-//    overflow:auto;
-//    -webkit-overflow-scrolling: touch;
-//}
-@mixin border-radius($radius){
-    //border-radius:$radius;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
-    
-}
 
-.hover_highlight:hover{
+/* Larger than tablet */
+@media (min-width: 750px) {
+    .hover_highlight:hover{
     color:$cAttention;
 }
+}
+
 
 .container{
     height:100%;
@@ -64,25 +50,10 @@ body{
 .content{
     padding:$frame_width; 
 }
-.move_down{
-    padding-top:20%;
-}
-.greeting{
-    
-    display:table;
-    background:$cGreetBackground;
-    margin-left:-50%;
-    padding-left:50%;
-    padding-right:$background-padding;
-    margin-bottom: 50px;
-    @include border-radius($border-radius_m);
-    box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
-}
-.navitem{
-    padding:0 5px;
-    color:$cTextPrimary;
-    
-}
+
+
+
+
 .navbar_text{
     line-height: $frame_width;
     margin-left:auto;
@@ -90,21 +61,9 @@ body{
     display:inline-block;
 }
 .no_margin{
-    
     margin:0;
 }
 
-.introline{
-    background:$cContentBackground;
-    margin-bottom: 2rem;
-    display:table;
-    position: relative;
-    padding-left:$background-padding;
-    padding-right:$background-padding;
-    @include border-radius($border-radius_m);
-    border:2px dashed #000;
-    
-}
 
 paper-ripple{
     color:$cAttention;
@@ -128,14 +87,12 @@ paper-ripple{
 
 
 .navbar{
-   // background:yellow;
-    position:absolute;
-    top:0;
     height:$frame_width;
     width:100%;
+    position:absolute;
+    top:0;
     pointer-events: auto;
-    left:50%;
-    transform: translateX(-50%);
+    
     color:lighten($cTextPrimary,30%);
     z-index: 10;
     display:flex;
@@ -151,28 +108,30 @@ paper-ripple{
     
 }
 
-#ampersand{
-    font-family: Helvetica,Ariel,sans-serif;
-    color:$cAttention;
-    text-shadow: 1px 2px 3px rgba(0,0,0,0.50);
-}
+
 .social{
     position: relative;
     color: #a9edff;
     
 }
-.item{
-    text-transform: uppercase;
-    background:$cItemBackground;
-    display:inline-block;
-    margin-bottom:5px;
-    padding-left:5px;
-    padding-right:5px;
-    margin-left:20px;
-    
-}
+
 .space:after{
     content:'';
     display:block;
     height:$frame_width;
+}
+.headroom {
+    background:yellow;
+    transition: transform 500ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+core-toolbar{
+    background:$superLight;
+    height:40px;
+    padding:0;
 }

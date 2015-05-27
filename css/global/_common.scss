@@ -5,3 +5,10 @@
     
     transform: translate(-50%, -50%);
 }
+@mixin border-radius($radius){
+    //border-radius:$radius;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    
+}
