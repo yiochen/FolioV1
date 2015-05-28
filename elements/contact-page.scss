@@ -1,14 +1,21 @@
 @import "../css/global/_color";
 
 .left{
-    padding:20px 0;
+    padding:20px 5px;
     background:$superLight;
     box-shadow: $boxShadow;
     margin-top:20px;
     text-decoration: none;
     color:$cTextPrimary;
+    position: relative;
 }
 .right{
     margin-top:20px;
     
+}
+
+.social{
+    width:40px;
+    height:40px;
+    padding:0 5px;
 }
