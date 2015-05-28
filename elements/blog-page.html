@@ -49,7 +49,11 @@
                             }
                             document.querySelector('html /deep/ #rack').posts=app.posts; 
                         }).go();
+                },
+                resize:function(){
+                    document.body.scrollTop = document.documentElement.scrollTop = 0;
                 }
+                
 
             });
         })();

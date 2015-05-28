@@ -1,24 +1,21 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../elements/page-info.html">
-<polymer-element name="project-page" extend="page-info">
+<polymer-element name="about-page" extend="page-info">
     <template>
         <link rel="stylesheet" href="../css/normalize.css">
         <link rel="stylesheet" href="../css/skeleton.css">
         <link rel="stylesheet" href="../css/index.css">
-        <link rel="stylesheet" href="../elements/project-page.css">
+        <link rel="stylesheet" href="../elements/about-page.css">
         
             <div class="container content">
                 <div class="row">
 
                     <div class="three columns page_intro">
-                        <div>
-                            <content select=".intro"></content>
-                        </div>
-
+                        <h5>email: chen.yiou1992@gmail.com</h5>
                     </div>
 
                     <div class="nine columns page_content space">
-                        <content select=".expand"></content>
+                        
                     </div>
                 </div>
             </div>
@@ -27,9 +24,7 @@
     <script>
         (function () {
             Polymer({
-                 resize:function(){
-                    document.body.scrollTop = document.documentElement.scrollTop = 0;
-                }
+                
             });
         })();
     </script>

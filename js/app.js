@@ -14,6 +14,12 @@ var app;
        
         app.project = document.querySelector('#project');
         app.pages = document.querySelector('core-animated-pages');
+        app.pages.notifyResize=function(){
+            if (app.pages.selectedItem.resize){
+                app.pages.selectedItem.resize();
+            }
+            
+        }
         app.posts = [];
         app.goHome = function (e) {
             app.pages.selected = app.home;
@@ -33,7 +39,6 @@ var app;
         app.pages.selected = 0;
 
         app.handleProjectData = function (eve) {
-
             app.project.response = eve.detail.response;
             //console.log(app.project.response);
 
@@ -43,6 +48,9 @@ var app;
     document.addEventListener('core-select', function (e) {
         var eve = e.detail;
         if (eve.isSelected) {
+            if (eve.item.refresh) {
+                eve.item.refresh();
+            }
             document.body.scrollTop = document.documentElement.scrollTop = 0;
         }
     });

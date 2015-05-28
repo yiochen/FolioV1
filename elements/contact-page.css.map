@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "file": "contact-page.css",
+  "sources": [
+    "contact-page.scss",
+    "../css/global/_color.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": "AAEA,AACI,AAAQ,AACR,ACOQ,ADNR,ACSQ,ADRR,AAAW,AACX,AAAiB,AACjB,ACPU,ADSd,AACI,AAAW",
+  "names": []
+}

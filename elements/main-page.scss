@@ -2,7 +2,7 @@
 @import "../css/global/_color";
 @import "../css/global/_dim";
 .move_down{
-    padding-top:20%;
+    padding-top:20px;
 }
 .greeting{
     
@@ -14,20 +14,18 @@
     margin-bottom: 50px;
     box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
 }
-.navitem{
-    padding:0 5px;
-    color:$cTextPrimary;
-    
-}
+
 
 .introline{
-    background:$cContentBackground;
+    color:white;
+    background:$halfDark;
     margin-bottom: 2rem;
     display:table;
     position: relative;
     padding-left:$background-padding;
     padding-right:$background-padding;
-    border:2px dashed #000;
+    box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
+//    border:2px dashed #000;
     
 }
 #ampersand{

@@ -4,17 +4,19 @@
   height: 300px;
   width: 100%;
   background: rgba(255, 255, 255, 0.85);
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28);
+  margin-bottom: 20px; }
 
-/* line 10, F:/Practice/Polymer/portfolio/elements/blog-card.scss */
+/* line 11, F:/Practice/Polymer/portfolio/elements/blog-card.scss */
 .row {
   padding: 10px; }
 
-/* line 14, F:/Practice/Polymer/portfolio/elements/blog-card.scss */
+/* line 15, F:/Practice/Polymer/portfolio/elements/blog-card.scss */
 #blog_body img {
   max-width: 100%; }
 
-/* line 18, F:/Practice/Polymer/portfolio/elements/blog-card.scss */
+/* line 19, F:/Practice/Polymer/portfolio/elements/blog-card.scss */
 .eclipse {
   position: absolute;
   height: 40px;
@@ -22,7 +24,7 @@
   background: linear-gradient(transparent, rgba(255, 255, 255, 0.85));
   bottom: 0; }
 
-/* line 28, F:/Practice/Polymer/portfolio/elements/blog-card.scss */
+/* line 29, F:/Practice/Polymer/portfolio/elements/blog-card.scss */
 .title {
   text-transform: uppercase; }
 

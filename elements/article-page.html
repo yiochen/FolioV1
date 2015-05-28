@@ -26,6 +26,9 @@
                 date:"date",
                 ready:function(){
                     this.blogBody=this.$.blog_body;
+                },
+                resize:function(){
+                    document.body.scrollTop = document.documentElement.scrollTop = 0;
                 }
             });
         })();

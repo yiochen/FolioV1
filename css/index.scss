@@ -37,8 +37,8 @@ body{
 /* Larger than tablet */
 @media (min-width: 750px) {
     .hover_highlight:hover{
-    color:$cAttention;
-}
+        color:$cAttention;
+    }
 }
 
 
@@ -46,13 +46,6 @@ body{
     height:100%;
    
 }
-
-.content{
-    padding:$frame_width; 
-}
-
-
-
 
 .navbar_text{
     line-height: $frame_width;
@@ -63,8 +56,6 @@ body{
 .no_margin{
     margin:0;
 }
-
-
 paper-ripple{
     color:$cAttention;
 }
@@ -85,28 +76,19 @@ paper-ripple{
     z-index:-2;  
 }
 
+.navitem{
+    padding:0 5px;
+    color:$cTextPrimary;
+}
 
-.navbar{
-    height:$frame_width;
-    width:100%;
-    position:absolute;
-    top:0;
-    pointer-events: auto;
-    
-    color:lighten($cTextPrimary,30%);
-    z-index: 10;
-    display:flex;
-    justify-content: center;
-}
-    
-.footer{
-    text-align: center;
-    position: absolute;
-    bottom:0;
-    height: $frame_width;
-    pointer-events:auto;
-    
-}
+//.footer{
+//    text-align: center;
+//    position: absolute;
+//    bottom:0;
+//    height: $frame_width;
+//    pointer-events:auto;
+//    
+//}
 
 
 .social{
@@ -120,18 +102,9 @@ paper-ripple{
     display:block;
     height:$frame_width;
 }
-.headroom {
-    background:yellow;
-    transition: transform 500ms linear;
-}
-.headroom--pinned {
-    transform: translateY(0%);
-}
-.headroom--unpinned {
-    transform: translateY(-100%);
-}
+
 core-toolbar{
     background:$superLight;
     height:40px;
-    padding:0;
+    box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
 }

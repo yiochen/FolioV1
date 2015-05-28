@@ -5,6 +5,8 @@
     height: $card_height;
     width: 100%;
     position: relative;
+    box-shadow: $boxShadow;
+    margin-bottom: 20px;
     
     lazy-image{
         position:absolute;

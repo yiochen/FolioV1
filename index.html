@@ -9,7 +9,7 @@
     <title>Yiou's Portfolio</title>
     <meta name="description" content="portfolio for yiou">
     <meta name="author" content="yiou chen">
-    <meta name="theme-color" content="#00FFFF">
+    <meta name="theme-color" content="#FFFFFF">
     <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
     <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" data-noprefix>
-<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -25,14 +25,14 @@
     <link rel="stylesheet" href="css/index.css">
 
 
-    
+
 
     <link rel="import" href="elements.html">
     <script src="js/prefixfree.min.js"></script>
-    
+
     <!--to be changed to js/aja.min.js-->
     <script src="bower_components/aja/src/aja.js"></script>
-    
+
     <!-- Favicon
 
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -42,53 +42,54 @@
 
 <body unresolved>
     <template is="auto-binding" id="app">
-        
-        <div class="window" >
+
+        <div class="window">
             <div class="container">
                 <div class="background_pic"></div>
             </div>
         </div>
-<!--        <div class="scroll_window" >-->
+        <!--        <div class="scroll_window" >-->
         <core-scroll-header-panel class="scroll_window">
-            <core-toolbar><div class="navbar">
-                       <h5 class="navbar_text"><paper-icon-button icon="home" style="float:left;" on-click="{{goHome}}"></paper-icon-button><span class="navitem hover_highlight" on-click="{{goFolio}}">Folio</span>|<span class="navitem hover_highlight" on-click="{{goBlog}}">Blog</span>|<span class="navitem hover_highlight" on-click="{{goAbout}}">About</span>|<span class="navitem hover_highlight" on-click="{{goContact}}">Contact</span>
-                </h5>
-                    </div></core-toolbar>
-            <core-animated-pages >
-            <!--page 1 ---main page----->
-            <main-page ></main-page>
-            <!--page 2 ---folio-page-->
-            <project-page >
-                <div class="intro">
-                    Offendit nisi tamen officia quae. Senserit quorum senserit ubi magna illustriora consequat irure appellat qui 
+            <core-toolbar justify="center">
+                <div>
+                    <h5 class="navbar_text"><paper-icon-button icon="home" style="float:left;" class="hover_highlight" on-click="{{goHome}}"></paper-icon-button><span class="navitem hover_highlight" on-click="{{goFolio}}">Folio</span>|<span class="navitem hover_highlight" on-click="{{goBlog}}">Blog</span>|<span class="navitem hover_highlight" on-click="{{goAbout}}">About</span>|<span class="navitem hover_highlight" on-click="{{goContact}}">Contact</span></h5>
                 </div>
-                <core-ajax url="/data/projects.json" auto handleAs="json" on-core-response="{{handleProjectData}}"></core-ajax>
-                <div class="expand">
-                    <template id="project" is="auto-binding" repeat="{{entry in response}}">
-                        <card-view class="expand" background="{{entry.image}}">
-                            <h3 class="caption">{{entry.caption}}</h3>
-                            <p class="description">{{entry.description}}</p>
-                        </card-view>
-                    </template>
-                </div>
+            </core-toolbar>
+            <core-animated-pages>
+                <!--page 1 ---main page----->
+                <main-page></main-page>
+                <!--page 2 ---folio-page-->
+                <project-page>
+                    <div class="intro">
+                        Offendit nisi tamen officia quae. Senserit quorum senserit ubi magna illustriora consequat irure appellat qui
+                    </div>
+                    <core-ajax url="/data/projects.json" auto handleAs="json" on-core-response="{{handleProjectData}}"></core-ajax>
+                    <div class="expand">
+                        <template id="project" is="auto-binding" repeat="{{entry in response}}">
+                            <card-view class="expand" background="{{entry.image}}">
+                                <h3 class="caption">{{entry.caption}}</h3>
+                                <p class="description">{{entry.description}}</p>
+                            </card-view>
+                        </template>
+                    </div>
 
-            </project-page>
-            <!--page 3 --blog-page----->
-            <blog-page></blog-page>
-            <!---page 4 --about page---->
-            <div>About page is not done yet</div>
-            <!---page 5 ---contact page -->
-            <div>Contact page is not done yet</div>
-            <!---page 6 ---blog article page -->
-            <article-page titleline="Hello world" date="12/15/2015" intro="This is a article about life and death">
-            </article-page>
-            
-        </core-animated-pages>
-        
+                </project-page>
+                <!--page 3 --blog-page----->
+                <blog-page></blog-page>
+                <!---page 4 --about page---->
+                <about-page></about-page>
+                <!---page 5 ---contact page -->
+                <contact-page></contact-page>
+                <!---page 6 ---blog article page -->
+                <article-page titleline="Hello world" date="12/15/2015" intro="This is a article about life and death">
+                </article-page>
+
+            </core-animated-pages>
+
         </core-scroll-header-panel>
-        
-<!--        </div>-->
-<!--
+
+        <!--        </div>-->
+        <!--
         <div class="window" style="pointer-events:none;">
             <div class="container">
             
@@ -100,10 +101,10 @@
                 </div>
         </div>
 -->
-<!--        <header class="headroom"><h1>this is a header dfsdfsdf</h1></header>-->
+        <!--        <header class="headroom"><h1>this is a header dfsdfsdf</h1></header>-->
         <script src="js/app.js"></script>
     </template>
-    
+
 </body>
 
 </html>

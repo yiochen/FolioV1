@@ -1,0 +1,51 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-icon/core-icon.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
+
+<link rel="import" href="../elements/page-info.html">
+<polymer-element name="contact-page" extend="page-info">
+    <template>
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/skeleton.css">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="contact-page.css">
+        
+            <div class="container content">
+                <div class="row">
+
+                    <div class="three columns left">
+                        <a href="mailto:chen.yiou1992@gmail.com?Subject=Hello" ><h6><core-icon icon="mail"></core-icon>chen.yiou1992@gmail.com</h6></a>
+                        <h6><core-icon icon="perm-phone-msg"></core-icon>347-459-5386</h6>
+                        
+                    </div>
+
+                    <div class="nine columns right space">
+                        <google-map id="map"
+                                    style="height:300px;"  
+                                    zoom="15"
+                                    fitToMarkers
+                                    >
+                            <google-map-marker
+                                id="me"
+                                latitude="40.7531357"
+                                longitude="-73.8261481">
+                            </google-map-marker>
+                        </google-map>
+                    </div>
+                </div>
+            </div>
+       
+    </template>
+    <script>
+        (function () {
+            Polymer({
+                resize:function(){
+                    this.$.map.resize();
+                    var latLng = this.$.me.marker.getPosition(); // returns LatLng object
+                    this.$.map.map.setCenter(latLng);
+                }
+            });
+        })();
+    </script>
+
+</polymer-element>
