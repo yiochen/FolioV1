@@ -2,9 +2,10 @@
   "version": 3,
   "file": "about-page.css",
   "sources": [
-    "about-page.scss"
+    "about-page.scss",
+    "../css/global/_color.scss"
   ],
   "sourcesContent": [],
-  "mappings": "",
+  "mappings": "AACA,AACI,ACSQ,ADRR,ACWQ,ADVR,AAAQ",
   "names": []
 }

@@ -1,8 +1,9 @@
 /* line 5, F:/Practice/Polymer/portfolio/elements/article-page.scss */
 .page_content {
   background: rgba(255, 255, 255, 0.85);
-  padding: 10px; }
-  /* line 8, F:/Practice/Polymer/portfolio/elements/article-page.scss */
+  padding: 10px;
+  box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28); }
+  /* line 9, F:/Practice/Polymer/portfolio/elements/article-page.scss */
   .page_content img {
     max-width: 100%; }
 

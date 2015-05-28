@@ -4,10 +4,11 @@
 
 <polymer-element name="blog-page">
     <template>
-        
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/skeleton.css">
         <project-page>
                 <div class="intro">
-                    Because every blog needs a second site to show
+                    <h3>Because every blog needs a second site to show</h3>
                 </div>
                 <div class="expand">
                     <template id="rack" is="auto-binding" repeat="{{post in posts}}">

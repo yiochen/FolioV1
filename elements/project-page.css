@@ -12,8 +12,6 @@
 @media (min-width: 550px) {
   /* line 19, F:/Practice/Polymer/portfolio/elements/project-page.scss */
   .page_intro div {
-    background: none;
-    width: 100%;
-    padding: 0; } }
+    width: 100%; } }
 
 /*# sourceMappingURL=project-page.css.map */
