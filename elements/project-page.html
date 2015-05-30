@@ -1,15 +1,14 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../elements/page-info.html">
-<polymer-element name="project-page" extend="page-info">
+
+<dom-module id="project-page">
+    <link rel="import" type="css" href="../css/normalize.css">
+    <link rel="import" type="css" href="../css/skeleton.css">
+    <link rel="import" type="css" href="../css/index.css">
+    <link rel="import" type="css" href="../elements/project-page.css">
+    
     <template>
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/skeleton.css">
-        <link rel="stylesheet" href="../css/index.css">
-        <link rel="stylesheet" href="../elements/project-page.css">
-        
             <div class="container content">
                 <div class="row">
-
                     <div class="three columns page_intro">
                         <div>
                         <h3>
@@ -24,16 +23,15 @@
                     </div>
                 </div>
             </div>
-       
     </template>
-    <script>
-        (function () {
-            Polymer({
-                 resize:function(){
-                    document.body.scrollTop = document.documentElement.scrollTop = 0;
-                }
-            });
-        })();
-    </script>
-
-</polymer-element>
+</dom-module>
+<script>
+    (function () {
+        Polymer({
+            is:"project-page",
+             resize:function(){
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }
+        });
+    })();
+</script>

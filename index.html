@@ -17,13 +17,19 @@
     <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" data-noprefix>
-    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/index.css">
-
+    <style is="custom-style">
+        paper-toolbar {
+            --paper-toolbar-background: rgba(255, 255, 255, 0.85);
+            height: 40px;
+            box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28);
+        }
+    </style>
 
 
 
@@ -41,35 +47,38 @@
 </head>
 
 <body unresolved>
-    
-    <template is="auto-binding" id="app">
-         <div class="window">
+
+    <template is="dom-bind" id="app">
+
+        <div class="window">
             <div class="container">
                 <div class="background_pic"></div>
             </div>
         </div>
-       
+
+
         <!--        <div class="scroll_window" >-->
-        <core-scroll-header-panel class="scroll_window">
-            <core-toolbar justify="center">
+        <paper-scroll-header-panel class="scroll_window">
+            <paper-toolbar justify="center">
                 <div>
-                    <h5 class="navbar_text"><paper-icon-button icon="home" style="float:left;" class="hover_highlight" on-click="{{goHome}}"></paper-icon-button><span class="navitem hover_highlight" on-click="{{goFolio}}">Folio</span>|<span class="navitem hover_highlight" on-click="{{goBlog}}">Blog</span>|<span class="navitem hover_highlight" on-click="{{goAbout}}">About</span>|<span class="navitem hover_highlight" on-click="{{goContact}}">Contact</span></h5>
+                    <h5 class="navbar_text"><iron-icon icon="home" on-click="goHome" class="navitem"></iron-icon><span class="navitem hover_highlight" on-click="goFolio">Folio</span>|<span class="navitem hover_highlight" on-click="goBlog">Blog</span>|<span class="navitem hover_highlight" on-click="goAbout">About</span>|<span class="navitem hover_highlight" on-click="goContact">Contact</span></h5>
                 </div>
-            </core-toolbar>
-            <core-animated-pages>
+            </paper-toolbar>
+            <iron-pages selected="1">
                 <!--page 1 ---main page----->
                 <main-page></main-page>
+                
                 <!--page 2 ---folio-page-->
                 <project-page>
                     <div class="intro">
                         Offendit nisi tamen officia quae. Senserit quorum senserit ubi magna illustriora consequat irure appellat qui
                     </div>
-                    <core-ajax url="/data/projects.json" auto handleAs="json" on-core-response="{{handleProjectData}}"></core-ajax>
+                    <iron-ajax url="/data/projects.json" auto handleAs="json" on-core-response="{{handleProjectData}}"></iron-ajax>
                     <div class="expand">
-                        <template id="project" is="auto-binding" repeat="{{entry in response}}">
-                            <card-view class="expand" background="{{entry.image}}">
-                                <h3 class="caption">{{entry.caption}}</h3>
-                                <p class="description">{{entry.description}}</p>
+                        <template id="project" is="dom-repeat" items="{{response}}">
+                            <card-view class="expand" background="{{item.image}}">
+                                <h3 class="caption">{{item.caption}}</h3>
+                                <p class="description">{{item.description}}</p>
                             </card-view>
                         </template>
                     </div>
@@ -82,28 +91,15 @@
                 <!---page 5 ---contact page -->
                 <contact-page></contact-page>
                 <!---page 6 ---blog article page -->
+<!--
                 <article-page titleline="Hello world" date="12/15/2015" intro="This is a article about life and death">
                 </article-page>
-
-            </core-animated-pages>
-
-        </core-scroll-header-panel>
-
-        <!--        </div>-->
-        <!--
-        <div class="window" style="pointer-events:none;">
-            <div class="container">
-            
-                    <div class="navbar">
-                       <h5 class="navbar_text"><paper-icon-button icon="home" style="float:left;" on-click="{{goHome}}"></paper-icon-button><span class="navitem hover_highlight" on-click="{{goFolio}}">Folio</span>|<span class="navitem hover_highlight" on-click="{{goBlog}}">Blog</span>|<span class="navitem hover_highlight" on-click="{{goAbout}}">About</span>|<span class="navitem hover_highlight" on-click="{{goContact}}">Contact</span>
-                </h5>
-                    </div>
-                    
-                </div>
-        </div>
 -->
-        <!--        <header class="headroom"><h1>this is a header dfsdfsdf</h1></header>-->
-        
+
+            </iron-pages>
+
+        </paper-scroll-header-panel>
+
     </template>
     <script src="js/app.js"></script>
 </body>

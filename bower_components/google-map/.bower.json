@@ -1,8 +1,8 @@
 {
   "name": "google-map",
-  "version": "0.4.2",
-  "homepage": "http://googlewebcomponents.github.io/google-map",
+  "version": "1.0.0",
   "description": "Google Maps web components",
+  "homepage": "https://googlewebcomponents.github.io/google-map",
   "main": "google-map.html",
   "authors": [
     "Frankie Fu <ffu@google.com>",
@@ -11,12 +11,9 @@
   ],
   "license": "Apache-2",
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
-    "../"
+    "/.*",
+    "/test/",
+    "/demo/"
   ],
   "keywords": [
     "web-component",
@@ -27,19 +24,20 @@
     "maps"
   ],
   "dependencies": {
-    "google-apis": "GoogleWebComponents/google-apis#^0.4.4"
+    "polymer": "Polymer/polymer#^1.0.0",
+    "google-apis": "GoogleWebComponents/google-apis#^1.0.0"
   },
   "devDependencies": {
-    "web-component-tester": "*"
+    "web-component-tester": "*",
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.2"
   },
-  "_release": "0.4.2",
+  "_release": "1.0.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.4.2",
-    "commit": "cbe9fa6bab57930b59cbbdd9017ea8a92f02a875"
+    "tag": "1.0.0",
+    "commit": "4dbe068ff16cfa93e5197b96ec7e247dcefc3e5a"
   },
   "_source": "git://github.com/GoogleWebComponents/google-map.git",
-  "_target": "~0.4.2",
-  "_originalSource": "GoogleWebComponents/google-map",
-  "_direct": true
+  "_target": "^1.0.0",
+  "_originalSource": "GoogleWebComponents/google-map"
 }

@@ -1,13 +1,13 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/core-media-query/core-media-query.html">
-<link rel="import" href="../elements/lazy-image.html">
-<polymer-element name="card-view" attributes="background">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+
+<!--<link rel="import" href="../elements/lazy-image.html">-->
+<dom-module id="card-view" attributes="background">
+    <link rel="import" type="css" href="card-view.css">
     <template>
-        <link rel="stylesheet" href="card-view.css">
+        
         <div class="card">
-            <template if="{{background}}">
-                <lazy-image image="{{background}}"></lazy-image>
-            </template>
+            <iron-image src="{{background}}" sizing="cover" style="background-color:lightgray;"></iron-image>
             <div class="overlay">
                 <div class="detail">
                     <content class="caption"></content>
@@ -20,14 +20,18 @@
         </div>
 
     </template>
-
-    <script>
-        (function () {
-            Polymer({
-
-
-            });
-        })();
-    </script>
-
-</polymer-element>
+</dom-module>
+<script>
+    (function () {
+        Polymer({
+            is:"card-view",
+            properties:{
+                background:{
+                    type:String,
+                    value:"#"
+                }
+            }
+            
+        });
+    })();
+</script>

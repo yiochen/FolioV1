@@ -1,10 +1,11 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="blog-card" attributes="titleline date blog">
+<dom-module id="blog-card">
+    <link rel="import" type="css" href="../css/normalize.css">
+    <link rel="import" type="css" href="../css/skeleton.css">
+    <link rel="import" type="css" href="blog-card.css">
     <template>
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/skeleton.css">
-        <link rel="stylesheet" href="blog-card.css">
+        
         <div class="card">
             <div class="row">
                 <div class="eight columns">
@@ -22,14 +23,32 @@
 
     </template>
 
-    <script>
-        (function () {
-            Polymer({
-                ready: function () {
-                    this.$.blog_body.innerHTML = this.blog;
+    
+</dom-module>
+<script>
+    (function () {
+        Polymer({
+            is:"blog-card",
+            ready: function () {
+                console.log(this.attributes.blog);
+                this.$.blog_body.innerHTML = this.blog;
+            },
+            properties:{
+                titleline:{
+                    type:String,
+                    value:'hello'
+                },
+                    
+                date:{
+                    type:String,
+                    value:"12/5"
+                },
+                blog:{
+                    type:String,
+                    value:"Hello world"
                 }
-
-            });
-        })();
-    </script>
-</polymer-element>
+            }
+           
+        });
+    })();
+</script>

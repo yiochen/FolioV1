@@ -14,7 +14,10 @@
     margin-bottom: 50px;
     box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
 }
-
+//.introline > paper-ripple{
+//    border-radius: 2px;
+//    overflow:hidden;
+//}
 
 .introline{
     color:white;
@@ -25,8 +28,7 @@
     padding-left:$background-padding;
     padding-right:$background-padding;
     box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
-//    border:2px dashed #000;
-    
+    overflow:hidden;
 }
 #ampersand{
     font-family: Helvetica,Ariel,sans-serif;

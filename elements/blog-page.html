@@ -2,31 +2,34 @@
 <link rel="import" href="../elements/project-page.html">
 <link rel="import" href="../elements/blog-card.html">
 
-<polymer-element name="blog-page">
+<dom-module id="blog-page">
+    <link rel="import" type="css" href="../css/normalize.css">
+    <link rel="import" type="css" href="../css/skeleton.css">
     <template>
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/skeleton.css">
+        
         <project-page>
                 <div class="intro">
                     <h3>Because every blog needs a second site to show</h3>
                 </div>
                 <div class="expand">
-                    <template id="rack" is="auto-binding" repeat="{{post in posts}}">
-                        <blog-card titleline="{{post.title}}"
-                                   date="{{post.date}}"
-                                   blog="{{post.body}}"
-                                   on-click="{{expandBlog}}"></blog-card>
+                    <template is="dom-repeat" items="{{posts}}">
+                        <blog-card titleline="{{item.title}}"
+                                   date="{{item.date}}"
+                                   blog="{{item.body}}"
+                                   on-click="expandBlog"></blog-card>
                     </template>
                 </div>
             </project-page>
     
      </template>
 
-    <script>
+    
+</dom-module>
+<script>
         (function () {
             Polymer({
+                is:"blog-page",
                 expandBlog:function(e){
-                    
                     app.pages.selected=app.article;
                     var article=app.pages.children[app.article];
                     article.titleline=e.target.titleline;
@@ -36,7 +39,7 @@
                 },
                 ready:function(){
                     app.posts=(app.posts==null)?[]:app.posts;
-        
+                    var that=this;
                     aja()
                         .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=0q6nbQaibqLbvTRQoOYiHqQEJbcHSMtgNIcdopG1NfVrBZF9b5&limit=10&offset=0')
                         .type('jsonp')
@@ -48,7 +51,7 @@
                                 post.id=data.response.posts[i].id;
                                 post.body=data.response.posts[i].body;
                             }
-                            document.querySelector('html /deep/ #rack').posts=app.posts; 
+                            that.posts=app.posts; 
                         }).go();
                 },
                 resize:function(){
@@ -59,4 +62,3 @@
             });
         })();
     </script>
-</polymer-element>

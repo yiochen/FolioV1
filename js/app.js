@@ -10,10 +10,9 @@ var app;
     app.about = 3;
     app.contact = 4;
     app.article = 5;
-    app.addEventListener('template-bound', function (e) {
-       
+    app.addEventListener('dom-change', function (e) {
         app.project = document.querySelector('#project');
-        app.pages = document.querySelector('core-animated-pages');
+        app.pages = document.querySelector('iron-pages');
         app.pages.notifyResize=function(){
             if (app.pages.selectedItem.resize){
                 app.pages.selectedItem.resize();
@@ -21,6 +20,7 @@ var app;
             
         }
         app.posts = [];
+        console.log('defining go home');
         app.goHome = function (e) {
             app.pages.selected = app.home;
         };
@@ -41,19 +41,18 @@ var app;
         app.handleProjectData = function (eve) {
             app.project.response = eve.detail.response;
             //console.log(app.project.response);
-
+        };
+        app.pages._oldSelectedPageChanged=app.pages._selectedPageChanged;
+        app.pages._selectedPageChanged = function (selected, old) {
+            app.pages._oldSelectedPageChanged();
+            if (app.pages.children[selected].refresh) {
+                app.pages.children[selected].refresh();
+            }
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
         };
     });
 
-    document.addEventListener('core-select', function (e) {
-        var eve = e.detail;
-        if (eve.isSelected) {
-            if (eve.item.refresh) {
-                eve.item.refresh();
-            }
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
-        }
-    });
+    
 
     document.addEventListener('next_page', function (e) {
         app.pages.selected = (app.pages.selected + 1) % app.pages.children.length;

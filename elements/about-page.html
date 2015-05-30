@@ -1,11 +1,12 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../elements/page-info.html">
-<polymer-element name="about-page" extend="page-info">
+
+<dom-module id="about-page">
+    <link rel="import" type="css" href="../css/normalize.css">
+    <link rel="import" type="css" href="../css/skeleton.css">
+    <link rel="import" type="css" href="../css/index.css">
+    <link rel="import" type="css" href="../elements/about-page.css">
     <template>
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/skeleton.css">
-        <link rel="stylesheet" href="../css/index.css">
-        <link rel="stylesheet" href="../elements/about-page.css">
+        
         
             <div class="container content">
                 <div class="row">
@@ -21,12 +22,13 @@
             </div>
        
     </template>
-    <script>
+    
+
+</dom-module>
+<script>
         (function () {
             Polymer({
-                
+                is:'about-page'
             });
         })();
     </script>
-
-</polymer-element>
