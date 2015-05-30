@@ -38,10 +38,7 @@ var app;
         };
         app.pages.selected = 0;
 
-        app.handleProjectData = function (eve) {
-            app.project.response = eve.detail.response;
-            //console.log(app.project.response);
-        };
+        
         app.pages._oldSelectedPageChanged=app.pages._selectedPageChanged;
         app.pages._selectedPageChanged = function (selected, old) {
             app.pages._oldSelectedPageChanged();

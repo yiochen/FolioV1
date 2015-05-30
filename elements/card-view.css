@@ -8,7 +8,7 @@
   margin-bottom: 20px;
   /* Larger than phablet (also point when grid becomes active) */ }
   /* line 11, F:/Practice/Polymer/portfolio/elements/card-view.scss */
-  .card lazy-image {
+  .card iron-image {
     position: absolute;
     height: 100%;
     width: 100%; }
