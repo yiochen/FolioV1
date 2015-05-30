@@ -30,7 +30,6 @@
         Polymer({
             is:"blog-card",
             ready: function () {
-                console.log(this.attributes.blog);
                 this.$.blog_body.innerHTML = this.blog;
             },
             properties:{

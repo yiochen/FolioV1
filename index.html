@@ -58,13 +58,13 @@
 
 
         <!--        <div class="scroll_window" >-->
-        <paper-scroll-header-panel class="scroll_window">
+        <paper-scroll-header-panel class="scroll_window" id="headerPane">
             <paper-toolbar justify="center">
                 <div>
                     <h5 class="navbar_text"><iron-icon icon="home" on-click="goHome" class="navitem"></iron-icon><span class="navitem hover_highlight" on-click="goFolio">Folio</span>|<span class="navitem hover_highlight" on-click="goBlog">Blog</span>|<span class="navitem hover_highlight" on-click="goAbout">About</span>|<span class="navitem hover_highlight" on-click="goContact">Contact</span></h5>
                 </div>
             </paper-toolbar>
-            <iron-pages selected="1">
+            <iron-pages selected="0">
                 <!--page 1 ---main page----->
                 <main-page></main-page>
                 <!--page 2 ---folio-page-->
@@ -76,11 +76,7 @@
                 <!---page 5 ---contact page -->
                 <contact-page></contact-page>
                 <!---page 6 ---blog article page -->
-<!--
-                <article-page titleline="Hello world" date="12/15/2015" intro="This is a article about life and death">
-                </article-page>
--->
-
+                <article-page></article-page>
             </iron-pages>
 
         </paper-scroll-header-panel>

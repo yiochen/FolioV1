@@ -1,12 +1,11 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../elements/page-info.html">
-<polymer-element name="article-page" extend="page-info">
+
+<dom-module id="article-page">
+    <link rel="import" type="css" href="../css/normalize.css">
+    <link rel="import" type="css" href="../css/skeleton.css">
+    <link rel="import" type="css" href="../css/index.css">
+    <link rel="import" type="css" href="article-page.css">
     <template>
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/skeleton.css">
-        <link rel="stylesheet" href="../css/index.css">
-        <link rel="stylesheet" href="../elements/article-page.css">
-        
         <div class="container content">
             <div class="row">
                 <div class="three columns page_intro">
@@ -16,22 +15,29 @@
                 <div class="nine columns page_content space" id="blog_body">
                 </div>
             </div>
-        </div>
-            
+        </div>    
     </template>
-    <script>
+</dom-module>
+<script>
         (function () {
             Polymer({
-                titleline:"Title",
-                date:"date",
+                is:"article-page",
+                properties:{
+                    titleline:{
+                        type:String,
+                        value:"Title"
+                    },
+                    date:{
+                        type:String,
+                        value:"12"
+                    },
+                },
                 ready:function(){
                     this.blogBody=this.$.blog_body;
                 },
-                resize:function(){
+                refresh:function(){
                     document.body.scrollTop = document.documentElement.scrollTop = 0;
                 }
             });
         })();
-    </script>
-
-</polymer-element>
+</script>

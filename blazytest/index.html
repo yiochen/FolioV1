@@ -30,13 +30,6 @@
             background:green;
             overflow:auto;
         }
-        .inner{
-            position:relative;
-            height:300px;
-            width:100px;
-            background:linear-gradient(0deg,black, white);
-            
-        }
         .div1{
             width:80%;
             height:300px;
@@ -51,29 +44,28 @@
 </head>
 
 <body>
+
     <template is="dom-bind" id="app">
         <div class="box">
-        <iron-pages selected="0">
-            <div class="div1"></div>
+        <iron-pages id="pages" selected="0">
+            <div class="div1" on-click="next"></div>
             <div class="div2"></div>
         </iron-pages>
-        </div>
-        
-            
-        
-        <div id="output">
         </div>
     </template>
         
         <script>
-//            var d;
-//            aja()
-//            .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=0q6nbQaibqLbvTRQoOYiHqQEJbcHSMtgNIcdopG1NfVrBZF9b5&filter=raw&limit=10&offset=0')
-//            .type('jsonp')
-//            .on('success',function(data){
-//                d=data.response.posts[0].body;
-//                document.querySelector('#output').innerHTML=d;
-//            }).go();
+            var app=document.querySelector('#app');
+            app.addEventListener('dom-change',function(){
+                
+                app.next=function(e){
+                    console.log(app.$.pages.selected);
+                    app.$.pages.selectNext();
+                    app.$.pages._removeListener(app.$.pages.activateEvent);
+                    console.log(app.$.pages.selected);
+                }
+            })
+            
         </script>
     
 </body>

@@ -47,7 +47,7 @@
         (function () {
             Polymer({
                 is:"contact-page",
-                resize:function(){
+                refresh:function(){
                     this.$.map.resize();
                     var latLng = this.$.me.marker.getPosition(); // returns LatLng object
                     this.$.map.map.setCenter(latLng);

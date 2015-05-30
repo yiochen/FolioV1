@@ -13,31 +13,26 @@ var app;
     app.addEventListener('dom-change', function (e) {
         app.project = document.querySelector('#project');
         app.pages = document.querySelector('iron-pages');
-        app.pages.notifyResize=function(){
-            if (app.pages.selectedItem.resize){
-                app.pages.selectedItem.resize();
-            }
-            
-        }
         app.posts = [];
         console.log('defining go home');
         app.goHome = function (e) {
-            app.pages.selected = app.home;
+            app.pages.select(app.home);
         };
         app.goFolio = function (e) {
-            app.pages.selected = app.folio;
+            app.pages.select(app.folio);
         };
         app.goBlog = function (e) {
-            app.pages.selected = app.blog;
+            app.pages.select(app.blog);
         };
         app.goAbout = function (e) {
-            app.pages.selected = app.about;
+            app.pages.select(app.about);
         };
         app.goContact = function (e) {
-            app.pages.selected = app.contact;
+            app.pages.select(app.contact);
         };
-        app.pages.selected = 0;
-
+        app.goArticle = function (e) {
+            app.pages.select(app.article);
+        }
         
         app.pages._oldSelectedPageChanged=app.pages._selectedPageChanged;
         app.pages._selectedPageChanged = function (selected, old) {
@@ -45,15 +40,15 @@ var app;
             if (app.pages.children[selected].refresh) {
                 app.pages.children[selected].refresh();
             }
-            document.body.scrollTop = document.documentElement.scrollTop = 0;
+            app.$.headerPane.scrollTop = document.documentElement.scrollTop = 0;
         };
     });
 
     
 
-    document.addEventListener('next_page', function (e) {
-        app.pages.selected = (app.pages.selected + 1) % app.pages.children.length;
-    });
+//    document.addEventListener('next_page', function (e) {
+//        app.pages.selected = (app.pages.selected + 1) % app.pages.children.length;
+//    });
     //    var request = new XMLHttpRequest();
     //    request.open('GET', '/data/projects.json', true);
     //    request.onload = function () {

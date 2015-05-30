@@ -7,16 +7,17 @@
     <link rel="import" type="css" href="../css/skeleton.css">
     <template>
         
-        <project-page>
+        <project-page on-click="expandBlog">
                 <div class="intro">
-                    <h3>Because every blog needs a second site to show</h3>
+                    <h3 on-click="expandBlog">Because every blog needs a second site to show</h3>
                 </div>
                 <div class="expand">
                     <template is="dom-repeat" items="{{posts}}">
                         <blog-card titleline="{{item.title}}"
                                    date="{{item.date}}"
                                    blog="{{item.body}}"
-                                   on-click="expandBlog"></blog-card>
+                                   on-click="expandBlog"
+                                   ></blog-card>
                     </template>
                 </div>
             </project-page>
@@ -30,11 +31,14 @@
             Polymer({
                 is:"blog-page",
                 expandBlog:function(e){
-                    app.pages.selected=app.article;
+                    var index=e.model.index;
+                    app.goArticle();
+                    
                     var article=app.pages.children[app.article];
-                    article.titleline=e.target.titleline;
-                    article.date=e.target.date;
-                    article.blogBody.innerHTML=e.target.blog;
+                    
+                    article.titleline=this.posts[index].titleline;
+                    article.date=this.posts[index].date;
+                    article.blogBody.innerHTML=this.posts[index].blog;
                     
                 },
                 ready:function(){
@@ -54,7 +58,7 @@
                             that.posts=app.posts; 
                         }).go();
                 },
-                resize:function(){
+                refresh:function(){
                     document.body.scrollTop = document.documentElement.scrollTop = 0;
                 }
                 
