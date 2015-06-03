@@ -19,6 +19,7 @@ var app;
             app.even=e;
         });
         app.posts = [];
+        app.currentpost={};
 //        console.log('defining go home');
 //        app.goHome = function (e) {
 //            app.pages.select(app.home);

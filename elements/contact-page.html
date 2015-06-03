@@ -52,8 +52,11 @@
                 ready:function(){
                     var that=this;
                   this.addEventListener('iron-resize',function(){
-                      that.refresh();
-                  })  
+                      if (app.route==="contact"){
+                          that.refresh();
+                      }
+                      
+                  });  
                 },
                 refresh:function(){
                     this.$.map.resize();

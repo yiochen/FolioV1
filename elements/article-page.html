@@ -1,5 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-
+<link rel="import" href="../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
 <dom-module id="article-page">
     <link rel="import" type="css" href="../css/normalize.css">
     <link rel="import" type="css" href="../css/skeleton.css">
@@ -9,35 +9,33 @@
         <div class="container content">
             <div class="row">
                 <div class="three columns page_intro">
-                    <h3>{{titleline}}</h3>
-                    <h5>{{date}}</h5>
+                    <h3 id="title"></h3>
+                    <h5 id="date"></h5>
                 </div>
-                <div class="nine columns page_content space" id="blog_body">
+                <div class="nine columns page_content space" >
+                    <div id="blog_body"></div>
                 </div>
             </div>
-        </div>    
+        </div>
     </template>
 </dom-module>
 <script>
-        (function () {
-            Polymer({
-                is:"article-page",
-                properties:{
-                    titleline:{
-                        type:String,
-                        value:"Title"
-                    },
-                    date:{
-                        type:String,
-                        value:"12"
-                    },
-                },
-                ready:function(){
-                    this.blogBody=this.$.blog_body;
-                },
-                refresh:function(){
-                    document.body.scrollTop = document.documentElement.scrollTop = 0;
-                }
-            });
-        })();
+    (function () {
+        Polymer({
+            is: "article-page",
+            ready: function () {
+
+                var that = this;
+                this.addEventListener('iron-resize', function () {
+                    that.$.title.innerHTML = app.currentpost.title;
+                    that.$.date.innerHTML = app.currentpost.date;
+                    that.$.blog_body.innerHTML = app.currentpost.content;
+                });
+            },
+            behaviors: [Polymer.IronResizableBehavior],
+            refresh: function () {
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }
+        });
+    })();
 </script>
