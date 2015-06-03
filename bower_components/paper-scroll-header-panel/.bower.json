@@ -1,7 +1,6 @@
 {
   "name": "paper-scroll-header-panel",
-  "description": "A header bar with scrolling behavior",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "license": "http://polymer.github.io/LICENSE.txt",
   "private": true,
   "authors": "The Polymer Authors",
@@ -36,13 +35,14 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
   },
   "homepage": "https://github.com/PolymerElements/paper-scroll-header-panel",
-  "_release": "1.0.1",
+  "_release": "1.0.0",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.1",
-    "commit": "2b8db7a3cb8bfc7c8811438dd8cdfbdfda65d4d3"
+    "tag": "v1.0.0",
+    "commit": "232869cc8a41c92733b44d36ecdf9751743a5229"
   },
   "_source": "git://github.com/PolymerElements/paper-scroll-header-panel.git",
-  "_target": "^1.0.0",
-  "_originalSource": "PolymerElements/paper-scroll-header-panel"
+  "_target": "1.0.0",
+  "_originalSource": "PolymerElements/paper-scroll-header-panel",
+  "_direct": true
 }

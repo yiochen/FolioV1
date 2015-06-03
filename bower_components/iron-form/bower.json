@@ -1,12 +1,6 @@
 {
   "name": "iron-form",
-  "version": "1.0.1",
-  "description": "Makes it easier to manage forms",
-  "keywords": [
-    "web-components",
-    "polymer",
-    "form"
-  ],
+  "version": "1.0.0",
   "authors": [
     "The Polymer Authors"
   ],
