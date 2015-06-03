@@ -1,0 +1,28 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="nav-item">
+    <link rel="import" type="css" href="../css/normalize.css">
+    <link rel="import" type="css" href="../css/skeleton.css">
+    <link rel="import" type="css" href="../css/index.css">
+<!--    <link rel="import" type="css" href="../elements/project-page.css">-->
+    <template>
+        <a href="{{link}}"><h5 class="navitem hover_highlight"><content></content></h5></a>
+    </template>
+</dom-module>
+<script>
+    (function () {
+        Polymer({
+            is:"nav-item",
+            properties:{
+                route:{
+                    type:String,
+                    value:"route"
+                },
+                link:{
+                    type:String,
+                    value:"/"
+                }
+            }
+        });
+    })();
+</script>

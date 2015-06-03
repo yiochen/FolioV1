@@ -76,20 +76,21 @@ paper-ripple {
 /* line 83, F:/Practice/Polymer/portfolio/css/index.scss */
 .navitem {
   padding: 0 5px;
-  color: #676767; }
+  color: #676767;
+  display: inline-block; }
 
-/* line 98, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 99, F:/Practice/Polymer/portfolio/css/index.scss */
 .social {
   position: relative;
   color: #a9edff; }
 
-/* line 104, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 105, F:/Practice/Polymer/portfolio/css/index.scss */
 .space:after {
   content: '';
   display: block;
   height: 40px; }
 
-/* line 109, F:/Practice/Polymer/portfolio/css/index.scss */
+/* line 110, F:/Practice/Polymer/portfolio/css/index.scss */
 paper-toolbar {
   --paper-toolbar-background: rgba(255, 255, 255, 0.85);
   height: 40px; }

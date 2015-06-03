@@ -13,58 +13,43 @@ var app;
     app.addEventListener('dom-change', function (e) {
         app.project = document.querySelector('#project');
         app.pages = document.querySelector('iron-pages');
+        app.route="home";
+        app.pages.addEventListener('tap',function(e){
+            alert('page changed');
+            app.even=e;
+        });
         app.posts = [];
-        console.log('defining go home');
-        app.goHome = function (e) {
-            app.pages.select(app.home);
-        };
-        app.goFolio = function (e) {
-            app.pages.select(app.folio);
-        };
-        app.goBlog = function (e) {
-            app.pages.select(app.blog);
-        };
-        app.goAbout = function (e) {
-            app.pages.select(app.about);
-        };
-        app.goContact = function (e) {
-            app.pages.select(app.contact);
-        };
-        app.goArticle = function (e) {
-            app.pages.select(app.article);
-        }
+//        console.log('defining go home');
+//        app.goHome = function (e) {
+//            app.pages.select(app.home);
+//        };
+//        app.goFolio = function (e) {
+//            app.pages.select(app.folio);
+//        };
+//        app.goBlog = function (e) {
+//            app.pages.select(app.blog);
+//        };
+//        app.goAbout = function (e) {
+//            app.pages.select(app.about);
+//        };
+//        app.goContact = function (e) {
+//            app.pages.select(app.contact);
+//        };
+//        app.goArticle = function (e) {
+//            app.pages.select(app.article);
+//        }
         
-        app.pages._oldSelectedPageChanged=app.pages._selectedPageChanged;
-        app.pages._selectedPageChanged = function (selected, old) {
-            app.pages._oldSelectedPageChanged();
-            if (app.pages.children[selected].refresh) {
-                app.pages.children[selected].refresh();
-            }
-            app.$.headerPane.scrollTop = document.documentElement.scrollTop = 0;
-        };
+        
+//        
+//        app.pages._oldSelectedPageChanged=app.pages._selectedPageChanged;
+//        app.pages._selectedPageChanged = function (selected, old) {
+//            app.pages._oldSelectedPageChanged();
+//            if (app.pages.children[selected].refresh) {
+//                app.pages.children[selected].refresh();
+//            }
+//            app.$.headerPane.scrollTop = document.documentElement.scrollTop = 0;
+//        };
     });
-
-    
-
-//    document.addEventListener('next_page', function (e) {
-//        app.pages.selected = (app.pages.selected + 1) % app.pages.children.length;
-//    });
-    //    var request = new XMLHttpRequest();
-    //    request.open('GET', '/data/projects.json', true);
-    //    request.onload = function () {
-    //        alert("haha");
-    //        if (request.status >= 200 && request.status < 400) {
-    //            // Success!
-    //            data = JSON.parse(request.responseText);
-    //            
-    //        } else {
-    //            // We reached our target server, but it returned an error
-    //
-    //        }
-    //
-    //    };
-    //    request.send();
-
     // wrap document so it plays nice with other libraries
     // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
 })(wrap(document));

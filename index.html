@@ -60,23 +60,27 @@
         <!--        <div class="scroll_window" >-->
         <paper-scroll-header-panel class="scroll_window" id="headerPane">
             <paper-toolbar justify="center">
-                <div>
-                    <h5 class="navbar_text"><iron-icon icon="home" on-click="goHome" class="navitem"></iron-icon><span class="navitem hover_highlight" on-click="goFolio">Folio</span>|<span class="navitem hover_highlight" on-click="goBlog">Blog</span>|<span class="navitem hover_highlight" on-click="goAbout">About</span>|<span class="navitem hover_highlight" on-click="goContact">Contact</span></h5>
+                <div class="navbar_text">
+                    <nav-item route="home" link="/"><iron-icon icon="home"></iron-icon></nav-item>
+                    <nav-item route="folio" link="/folio">Folio</nav-item>
+                    <nav-item route="blog" link="/blog">Blog</nav-item>
+                    <nav-item route="about" link="/about">About</nav-item>
+                    <nav-item route="contact" link="/contact">Contact</nav-item>
                 </div>
             </paper-toolbar>
-            <iron-pages selected="0">
+            <iron-pages attr-for-selected="data-route" selected="{{route}}">
                 <!--page 1 ---main page----->
-                <main-page></main-page>
+                <main-page data-route="home"></main-page>
                 <!--page 2 ---folio-page-->
-                <folio-page></folio-page>
+                <folio-page data-route="folio"></folio-page>
                 <!--page 3 --blog-page----->
-                <blog-page></blog-page>
+                <blog-page data-route="blog"></blog-page>
                 <!---page 4 --about page---->
-                <about-page></about-page>
+                <about-page data-route="about"></about-page>
                 <!---page 5 ---contact page -->
-                <contact-page></contact-page>
+                <contact-page data-route="contact"></contact-page>
                 <!---page 6 ---blog article page -->
-                <article-page></article-page>
+                <article-page data-route="article"></article-page>
             </iron-pages>
 
         </paper-scroll-header-panel>
