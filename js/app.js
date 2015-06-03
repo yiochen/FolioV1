@@ -10,6 +10,7 @@ var app;
     app.about = 3;
     app.contact = 4;
     app.article = 5;
+    app.api="0q6nbQaibqLbvTRQoOYiHqQEJbcHSMtgNIcdopG1NfVrBZF9b5";
     app.addEventListener('dom-change', function (e) {
         app.project = document.querySelector('#project');
         app.pages = document.querySelector('iron-pages');
@@ -20,6 +21,7 @@ var app;
         });
         app.posts = [];
         app.currentpost={};
+        
 //        console.log('defining go home');
 //        app.goHome = function (e) {
 //            app.pages.select(app.home);

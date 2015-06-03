@@ -12,7 +12,7 @@
                     <h3 id="title"></h3>
                     <h5 id="date"></h5>
                 </div>
-                <div class="nine columns page_content space" >
+                <div class="nine columns page_content space">
                     <div id="blog_body"></div>
                 </div>
             </div>
@@ -21,21 +21,46 @@
 </dom-module>
 <script>
     (function () {
-        Polymer({
-            is: "article-page",
-            ready: function () {
+            Polymer({
+                    is: "article-page",
+                    ready: function () {
 
-                var that = this;
-                this.addEventListener('iron-resize', function () {
-                    that.$.title.innerHTML = app.currentpost.title;
-                    that.$.date.innerHTML = app.currentpost.date;
-                    that.$.blog_body.innerHTML = app.currentpost.content;
-                });
-            },
-            behaviors: [Polymer.IronResizableBehavior],
-            refresh: function () {
-                document.body.scrollTop = document.documentElement.scrollTop = 0;
-            }
-        });
+                        var that = this;
+                        this.addEventListener('iron-resize', function () {
+                                console.log(app.route);
+                                if (app.route === "article") {
+
+                                    if (app.params.article === app.currentpost.id) {
+
+                                        that.$.title.innerHTML = app.currentpost.title;
+                                        that.$.date.innerHTML = app.currentpost.date;
+                                        that.$.blog_body.innerHTML = app.currentpost.body;
+                                    } else {
+                                        aja()
+                                            .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=' + app.api + '&id=' + app.params.article)
+                                            .type('jsonp')
+                                            .on('success', function (data) {
+                                                    var post = {};
+                                                    post.title = data.response.posts[0].title;
+                                                    post.date = data.response.posts[0].date;
+                                                    post.id = data.response.posts[0].id;
+                                                    post.body = data.response.posts[0].body;
+                                                    app.currentpost = post;
+                                                    that.$.title.innerHTML = app.currentpost.title;
+                                                    that.$.date.innerHTML = app.currentpost.date;
+                                                    that.$.blog_body.innerHTML = app.currentpost.body;
+                                                }
+                                            ).go();
+                                }
+
+                            }
+
+                        });
+                },
+                behaviors: [Polymer.IronResizableBehavior],
+                refresh: function () {
+                    document.body.scrollTop = document.documentElement.scrollTop = 0;
+                }
+            });
     })();
 </script>

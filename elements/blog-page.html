@@ -8,63 +8,63 @@
     <link rel="import" type="css" href="../css/skeleton.css">
     <link rel="import" type="css" href="../css/index.css">
     <template>
-        
-        <project-page on-click="expandBlog">
-                <div class="intro">
-                    <h3 on-click="expandBlog">Because every blog needs a second site to show</h3>
-                </div>
-                <div class="expand">
-                    <template is="dom-repeat" items="{{posts}}">
-                       <a href="/blog/new"> <blog-card titleline="{{item.title}}"
-                                   date="{{item.date}}"
-                                   blog="{{item.body}}"
-                                    on-click="{{expandBlog}}"
-                                   ></blog-card>
-                           </a>
-                    </template>
-                </div>
-            </project-page>
-    
-     </template>
 
-    
+        <project-page on-click="expandBlog">
+            <div class="intro">
+                <h3>Because every blog needs a second site to show</h3>
+            </div>
+            <div class="expand">
+                <template is="dom-repeat" items="{{posts}}">
+                    <a href$="{{getPath(item.id)}}">
+                        <blog-card titleline="{{item.title}}" date="{{item.date}}" blog="{{item.body}}" on-click="{{expandBlog}}"></blog-card>
+                    </a>
+                </template>
+            </div>
+        </project-page>
+
+    </template>
+
+
 </dom-module>
 <script>
-        (function () {
-            Polymer({
-                is:"blog-page",
-                expandBlog:function(e){
-                    
-                    var index=e.model.index;
-                    var post=this.posts[index];
-                    app.currentpost.title=post.title;
-                    app.currentpost.date=post.date;
-                    app.currentpost.content=post.body;
-                    app.currentpost.id=post.id;
-                   
-                },
-                ready:function(){
-                    app.posts=(app.posts==null)?[]:app.posts;
-                    var that=this;
-                    aja()
-                        .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=0q6nbQaibqLbvTRQoOYiHqQEJbcHSMtgNIcdopG1NfVrBZF9b5&limit=10&offset=0')
-                        .type('jsonp')
-                        .on('success',function(data){
-                            for (var i=0;i<data.response.posts.length;i++){
-                                var post=app.posts[app.posts.length]={};
-                                post.title=data.response.posts[i].title;
-                                post.date=data.response.posts[i].date;
-                                post.id=data.response.posts[i].id;
-                                post.body=data.response.posts[i].body;
-                            }
-                            that.posts=app.posts; 
-                        }).go();
-                },
-                refresh:function(){
-                    document.body.scrollTop = document.documentElement.scrollTop = 0;
-                }
+    (function () {
+        Polymer({
+            is: "blog-page",
+            getPath:function(id){
+                return "/blog/"+id;
+            },
+            expandBlog: function (e) {
+                var index = e.model.index;
+                var post = this.posts[index];
+                app.currentpost=post;
+//                app.currentpost.title = post.title;
+//                app.currentpost.date = post.date;
+//                app.currentpost.content = post.body;
+//                app.currentpost.id = ""+post.id;
                 
+            },
+            ready: function () {
+                app.posts = (app.posts == null) ? [] : app.posts;
+                var that = this;
+                aja()
+                    .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key='+app.api+'&limit=10&offset=0')
+                    .type('jsonp')
+                    .on('success', function (data) {
+                        for (var i = 0; i < data.response.posts.length; i++) {
+                            var post = app.posts[app.posts.length] = {};
+                            post.title = data.response.posts[i].title;
+                            post.date = data.response.posts[i].date;
+                            post.id = ""+data.response.posts[i].id;
+                            post.body = data.response.posts[i].body;
+                        }
+                        that.posts = app.posts;
+                    }).go();
+            },
+            refresh: function () {
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }
 
-            });
-        })();
-    </script>
+
+        });
+    })();
+</script>
