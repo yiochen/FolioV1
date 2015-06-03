@@ -10,33 +10,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>hello blazy</title>
-    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
     <script src="../js/prefixfree.min.js"></script>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/skeleton.css">
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="import" href="../bower_components/core-animated-pages/core-animated-pages.html">
+    <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
     <script src="../bower_components/aja/src/aja.js"></script>
     <style>
         body {
             color:white;
             background: black;
         }
-/*
         .box{
             position:relative;
             height:200px;
             width:200px;
             background:green;
             overflow:auto;
-        }
-        .inner{
-            position:relative;
-            height:300px;
-            width:100px;
-            background:linear-gradient(0deg,black, white);
-            
         }
         .div1{
             width:80%;
@@ -45,28 +37,37 @@
         }
         .div2{
             width:80%;
-            height:200px;
-            background-color:green;
+            height:300px;
+            background-color:red;
         }
-*/
     </style>
 </head>
 
 <body>
-    <template is="auto-binding" id="app">
+
+    <template is="dom-bind" id="app">
+        <div class="box">
+        <iron-pages id="pages" selected="0">
+            <div class="div1" on-click="next"></div>
+            <div class="div2"></div>
+        </iron-pages>
+        </div>
+    </template>
         
-        <div id="output"></div>
         <script>
-            var d;
-            aja()
-            .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=0q6nbQaibqLbvTRQoOYiHqQEJbcHSMtgNIcdopG1NfVrBZF9b5&filter=raw&limit=10&offset=0')
-            .type('jsonp')
-            .on('success',function(data){
-                d=data.response.posts[0].body;
-                document.querySelector('#output').innerHTML=d;
-            }).go();
+            var app=document.querySelector('#app');
+            app.addEventListener('dom-change',function(){
+                
+                app.next=function(e){
+                    console.log(app.$.pages.selected);
+                    app.$.pages.selectNext();
+                    app.$.pages._removeListener(app.$.pages.activateEvent);
+                    console.log(app.$.pages.selected);
+                }
+            })
+            
         </script>
-    </template> 
+    
 </body>
 
 </html>

@@ -12,7 +12,7 @@
   margin-bottom: 50px;
   box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28); }
 
-/* line 19, F:/Practice/Polymer/portfolio/elements/main-page.scss */
+/* line 22, F:/Practice/Polymer/portfolio/elements/main-page.scss */
 .introline {
   color: white;
   background: rgba(0, 0, 0, 0.5);
@@ -21,15 +21,16 @@
   position: relative;
   padding-left: 20px;
   padding-right: 20px;
-  box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28); }
+  box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28);
+  overflow: hidden; }
 
-/* line 31, F:/Practice/Polymer/portfolio/elements/main-page.scss */
+/* line 33, F:/Practice/Polymer/portfolio/elements/main-page.scss */
 #ampersand {
   font-family: Helvetica,Ariel,sans-serif;
   color: aqua;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5); }
 
-/* line 36, F:/Practice/Polymer/portfolio/elements/main-page.scss */
+/* line 38, F:/Practice/Polymer/portfolio/elements/main-page.scss */
 .item {
   text-transform: uppercase;
   background: rgba(204, 204, 204, 0.9);

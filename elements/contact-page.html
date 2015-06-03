@@ -1,21 +1,21 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/core-icon/core-icon.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../bower_components/google-map/google-map.html">
+<link rel="import" href="../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
 
-<link rel="import" href="../elements/page-info.html">
-<polymer-element name="contact-page" extend="page-info">
+
+<dom-module id="contact-page">
+    <link rel="import" type="css" href="../css/normalize.css">
+    <link rel="import" type="css" href="../css/skeleton.css">
+    <link rel="import" type="css" href="../css/index.css">
+    <link rel="import" type="css" href="contact-page.css">
     <template>
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/skeleton.css">
-        <link rel="stylesheet" href="../css/index.css">
-        <link rel="stylesheet" href="contact-page.css">
-        
             <div class="container content">
                 <div class="row">
 
                     <div class="three columns left">
-                        <a href="mailto:chen.yiou1992@gmail.com?Subject=Hello" ><h6><core-icon icon="mail"></core-icon>chen.yiou1992@gmail.com</h6></a>
-                        <h6><core-icon icon="perm-phone-msg"></core-icon>347-459-5386</h6>
+                        <a href="mailto:chen.yiou1992@gmail.com?Subject=Hello" ><h6><iron-icon icon="mail"></iron-icon>chen.yiou1992@gmail.com</h6></a>
+                        <h6><iron-icon icon="perm-phone-msg"></iron-icon>347-459-5386</h6>
                         <div class="icons">
                             <a href="https://www.facebook.com/chenyiou"><img class="social" src="../images/Facebook.png"></a>
                             <a href="https://www.linkedin.com/pub/yiou-chen/74/215/192"><img class="social" src="../images/LinkedIn.png"></a>
@@ -41,10 +41,24 @@
             </div>
        
     </template>
-    <script>
+    
+
+</dom-module>
+<script>
         (function () {
             Polymer({
-                resize:function(){
+                is:"contact-page",
+                behaviors:[Polymer.IronResizableBehavior],
+                ready:function(){
+                    var that=this;
+                  this.addEventListener('iron-resize',function(){
+                      if (app.route==="contact"){
+                          that.refresh();
+                      }
+                      
+                  });  
+                },
+                refresh:function(){
                     this.$.map.resize();
                     var latLng = this.$.me.marker.getPosition(); // returns LatLng object
                     this.$.map.map.setCenter(latLng);
@@ -52,5 +66,3 @@
             });
         })();
     </script>
-
-</polymer-element>

@@ -1,7 +1,14 @@
+
 @import "global/_color";
 @import "global/_dim";
 @import "global/_common";
-
+a{
+    text-decoration:none;
+    color:$cTextPrimary;
+}
+a:hover{
+    color:$cTextPrimary;
+}
 html, body{
     height:100%;
     margin: 0px;
@@ -16,6 +23,7 @@ html, body{
 body{
     background:$background;
     background-repeat: repeat;
+    
 }
 
 .window{
@@ -52,12 +60,14 @@ body{
     margin-left:auto;
     margin-right:auto;
     display:inline-block;
+    
 }
 .no_margin{
     margin:0;
 }
 paper-ripple{
     color:$cAttention;
+    overflow:hidden;
 }
 .whole_container{
     position: absolute;
@@ -79,6 +89,7 @@ paper-ripple{
 .navitem{
     padding:0 5px;
     color:$cTextPrimary;
+    display:inline-block;
 }
 
 //.footer{
@@ -102,9 +113,11 @@ paper-ripple{
     display:block;
     height:$frame_width;
 }
-
-core-toolbar{
-    background:$superLight;
+paper-toolbar{
+    --paper-toolbar-background:$superLight;
     height:40px;
-    box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
+//    box-shadow: 10px 10px 36px -9px rgba(0,0,0,0.28);
 }
+
+
+

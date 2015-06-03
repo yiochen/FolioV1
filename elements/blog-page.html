@@ -1,42 +1,59 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../elements/project-page.html">
 <link rel="import" href="../elements/blog-card.html">
+<link rel="import" href="../routing.html">
 
-<polymer-element name="blog-page">
+<dom-module id="blog-page">
+    <link rel="import" type="css" href="../css/normalize.css">
+    <link rel="import" type="css" href="../css/skeleton.css">
+    <link rel="import" type="css" href="../css/index.css">
     <template>
-        <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/skeleton.css">
-        <project-page>
+        
+        <project-page on-click="expandBlog">
                 <div class="intro">
-                    <h3>Because every blog needs a second site to show</h3>
+                    <h3 on-click="expandBlog">Because every blog needs a second site to show</h3>
                 </div>
                 <div class="expand">
-                    <template id="rack" is="auto-binding" repeat="{{post in posts}}">
-                        <blog-card titleline="{{post.title}}"
-                                   date="{{post.date}}"
-                                   blog="{{post.body}}"
-                                   on-click="{{expandBlog}}"></blog-card>
+                    <template is="dom-repeat" items="{{posts}}">
+                       <a href="/blog/new"> <blog-card titleline="{{item.title}}"
+                                   date="{{item.date}}"
+                                   blog="{{item.body}}"
+                                    on-click="{{expandBlog}}"
+                                   ></blog-card>
+                           </a>
                     </template>
                 </div>
             </project-page>
     
      </template>
 
-    <script>
+    
+</dom-module>
+<script>
         (function () {
             Polymer({
+                is:"blog-page",
                 expandBlog:function(e){
-                    
-                    app.pages.selected=app.article;
-                    var article=app.pages.children[app.article];
-                    article.titleline=e.target.titleline;
-                    article.date=e.target.date;
-                    article.blogBody.innerHTML=e.target.blog;
-                    
+                    alert('hey');
+                    var index=e.model.index;
+                    var post=this.posts[index];
+                    app.currentpost.title=post.title;
+                    app.currentpost.date=post.date;
+                    app.currentpost.content=post.body;
+                    app.currentpost.id=post.id;
+                    alert(app.currentpost.title+app.currentpost.date+ app.currentpost.content+app.currentpost.id);
+//                    app.goArticle();
+//                    
+//                    var article=app.pages.children[app.article];
+//                    
+//                    article.titleline=this.posts[index].titleline;
+//                    article.date=this.posts[index].date;
+//                    article.blogBody.innerHTML=this.posts[index].blog;
+//                    
                 },
                 ready:function(){
                     app.posts=(app.posts==null)?[]:app.posts;
-        
+                    var that=this;
                     aja()
                         .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=0q6nbQaibqLbvTRQoOYiHqQEJbcHSMtgNIcdopG1NfVrBZF9b5&limit=10&offset=0')
                         .type('jsonp')
@@ -48,10 +65,10 @@
                                 post.id=data.response.posts[i].id;
                                 post.body=data.response.posts[i].body;
                             }
-                            document.querySelector('html /deep/ #rack').posts=app.posts; 
+                            that.posts=app.posts; 
                         }).go();
                 },
-                resize:function(){
+                refresh:function(){
                     document.body.scrollTop = document.documentElement.scrollTop = 0;
                 }
                 
@@ -59,4 +76,3 @@
             });
         })();
     </script>
-</polymer-element>
