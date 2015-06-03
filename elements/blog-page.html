@@ -34,22 +34,14 @@
             Polymer({
                 is:"blog-page",
                 expandBlog:function(e){
-                    alert('hey');
+                    
                     var index=e.model.index;
                     var post=this.posts[index];
                     app.currentpost.title=post.title;
                     app.currentpost.date=post.date;
                     app.currentpost.content=post.body;
                     app.currentpost.id=post.id;
-                    alert(app.currentpost.title+app.currentpost.date+ app.currentpost.content+app.currentpost.id);
-//                    app.goArticle();
-//                    
-//                    var article=app.pages.children[app.article];
-//                    
-//                    article.titleline=this.posts[index].titleline;
-//                    article.date=this.posts[index].date;
-//                    article.blogBody.innerHTML=this.posts[index].blog;
-//                    
+                   
                 },
                 ready:function(){
                     app.posts=(app.posts==null)?[]:app.posts;
