@@ -2,7 +2,13 @@
 @import "global/_color";
 @import "global/_dim";
 @import "global/_common";
-
+a{
+    text-decoration:none;
+    color:$cTextPrimary;
+}
+a:hover{
+    color:$cTextPrimary;
+}
 html, body{
     height:100%;
     margin: 0px;

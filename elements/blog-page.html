@@ -1,10 +1,12 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../elements/project-page.html">
 <link rel="import" href="../elements/blog-card.html">
+<link rel="import" href="../routing.html">
 
 <dom-module id="blog-page">
     <link rel="import" type="css" href="../css/normalize.css">
     <link rel="import" type="css" href="../css/skeleton.css">
+    <link rel="import" type="css" href="../css/index.css">
     <template>
         
         <project-page on-click="expandBlog">
@@ -13,11 +15,12 @@
                 </div>
                 <div class="expand">
                     <template is="dom-repeat" items="{{posts}}">
-                        <blog-card titleline="{{item.title}}"
+                       <a href="/blog/new"> <blog-card titleline="{{item.title}}"
                                    date="{{item.date}}"
                                    blog="{{item.body}}"
-                                   on-click="expandBlog"
+                                   
                                    ></blog-card>
+                           </a>
                     </template>
                 </div>
             </project-page>
