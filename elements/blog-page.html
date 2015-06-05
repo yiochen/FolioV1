@@ -9,14 +9,14 @@
     <link rel="import" type="css" href="../css/index.css">
     <template>
 
-        <project-page on-click="expandBlog">
+        <project-page>
             <div class="intro">
                 <h3>Because every blog needs a second site to show</h3>
             </div>
             <div class="expand">
                 <template is="dom-repeat" items="{{posts}}">
                     <a href$="{{getPath(item.id)}}">
-                        <blog-card titleline="{{item.title}}" date="{{item.date}}" blog="{{item.body}}" on-click="{{expandBlog}}"></blog-card>
+                        <blog-card titleline="{{item.title}}" date="{{item.date}}" blog="{{item.body}}" on-click="expandPost"></blog-card>
                     </a>
                 </template>
             </div>
@@ -33,15 +33,10 @@
             getPath:function(id){
                 return "/blog/"+id;
             },
-            expandBlog: function (e) {
+            expandPost: function (e,detail, sender) {
                 var index = e.model.index;
                 var post = this.posts[index];
                 app.currentpost=post;
-//                app.currentpost.title = post.title;
-//                app.currentpost.date = post.date;
-//                app.currentpost.content = post.body;
-//                app.currentpost.id = ""+post.id;
-                
             },
             ready: function () {
                 app.posts = (app.posts == null) ? [] : app.posts;

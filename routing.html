@@ -23,13 +23,17 @@
 
         page('/about', function () {
             app.route = 'about';
-        })
+        });
 
-        page('/blog/:article', function (data) {
-                app.route = 'article';
-                app.params = data.params;
-            })
-            // add #! before urls
+        page('/blog/:post', function (data) {
+            app.route = 'blogpost';
+            app.params = data.params;
+        });
+        page('/folio/:post', function (data) {
+            app.route = "foliopost";
+            app.params = data.params;
+        });
+        // add #! before urls
         page({
             hashbang: true
         });

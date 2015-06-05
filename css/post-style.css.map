@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "post-style.css",
+  "sources": [
+    "post-style.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": ";AAAA;EACI,AAAW;;;AAEf;EACI,AAAU;;;AAEd;EACI,AAAQ;;;AAEZ;EACI,AAAa;EACb,AAAc",
+  "names": []
+}

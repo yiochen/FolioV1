@@ -11,16 +11,15 @@ var app;
     app.contact = 4;
     app.article = 5;
     app.api="0q6nbQaibqLbvTRQoOYiHqQEJbcHSMtgNIcdopG1NfVrBZF9b5";
+    app.posts = [];
+    app.projects=[];
+    app.currentpost={};
+    
     app.addEventListener('dom-change', function (e) {
         app.project = document.querySelector('#project');
         app.pages = document.querySelector('iron-pages');
         app.route="home";
-        app.pages.addEventListener('tap',function(e){
-            alert('page changed');
-            app.even=e;
-        });
-        app.posts = [];
-        app.currentpost={};
+        
         
 //        console.log('defining go home');
 //        app.goHome = function (e) {

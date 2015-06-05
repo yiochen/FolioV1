@@ -1,0 +1,69 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
+<!--<link rel="import" href="../bower_components/iron-image/iron-image.html">-->
+<dom-module id="presenter-page">
+    <link rel="import" type="css" href="../css/normalize.css">
+    <link rel="import" type="css" href="../css/skeleton.css">
+    <link rel="import" type="css" href="../css/index.css">
+    <link rel="import" type="css" href="article-page.css">
+    <template>
+        <div class="container content">
+            <div class="row page_content" id="stage">
+            </div>
+        </div>
+    </template>
+</dom-module>
+<script>
+    (function () {
+        Polymer({
+            is: "presenter-page",
+            ready: function () {
+                var that = this;
+                console.log('setting up folio-update listener');
+                
+                that.addEventListener('iron-resize', function () {
+                    document.addEventListener('folio-update',function(e){
+                        console.log('the project list is updated, update the current post');
+                        updateproject();
+
+                    });
+                    function updateproject(){
+                        if (app.route === "foliopost") {
+                        var noproject="data/projects/noproject.html";
+                        console.log("the currentpost url is "+app.currentpost.url);
+                        
+                        if (!app.currentpost.url || (app.currentpost.url===noproject)) {
+                            console.log("now the url is "+app.currentpost.url+" and noprojet is "+noproject);
+                            app.currentpost.url = noproject;
+                            console.log("projects are "+app.projects);
+                            for (var project of app.projects) {
+                                
+                                if (project.id === app.params.post) {
+                                    app.currentpost.url = project.url;
+                                    break;
+                                }
+                            }
+                        }
+                        that.importHref(app.currentpost.url, function (e) {
+                            //clean up dom
+                            var stage = that.$.stage;
+                            while (stage.lastChild) {
+                                stage.removeChild(stage.lastChild);
+                            }
+                            app.doc = e.target.import;
+                            stage.appendChild(e.target.import.querySelector('#main').cloneNode(true));
+                        }, function (e) {}); //importHref
+
+                    } //if app.route===foliopost
+                    }
+                    updateproject();
+
+                });
+            },
+            behaviors: [Polymer.IronResizableBehavior],
+            refresh: function () {
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }
+        });
+    })();
+</script>

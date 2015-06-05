@@ -1,27 +1,14 @@
 [{
-        "caption": "caption one ..",
-        "description": "description one",
-        "image": "https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg"
+        "title": "Meetme",
+        "id":"123s",
+        "description": "Shared location tracker for meeting up",
+        "image": "https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg",
+        "url":"data/projects/meetme.html"
     }, {
-        "caption": "caption two ..",
-        "description": "description one",
-        "image": "https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg"
-    },
- {
-        "caption": "caption one ..",
-        "description": "description one",
-        "image": "https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg"
-    }, {
-        "caption": "caption two ..",
-        "description": "description one",
-        "image": "https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg"
-    },{
-        "caption": "caption one ..",
-        "description": "description one",
-        "image": "https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg"
-    }, {
-        "caption": "caption two ..",
-        "description": "description one",
-        "image": "https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg"
+        "title": "Digital scenary painting",
+        "id":"254l3",
+        "description": "Some digital paintings I did in spare time",
+        "image": "http://img14.deviantart.net/6bbc/i/2014/286/1/5/bigtree_by_melonboy123-d82q9aw.jpg",
+        "url":"data/projects/scenary.html"
     }
 ]

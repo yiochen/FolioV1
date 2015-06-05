@@ -49,7 +49,7 @@
 <body unresolved>
 
     <template is="dom-bind" id="app">
-
+        
         <div class="window">
             <div class="container">
                 <div class="background_pic"></div>
@@ -69,18 +69,20 @@
                 </div>
             </paper-toolbar>
             <iron-pages attr-for-selected="data-route" selected="{{route}}">
-                <!--page 1 ---main page----->
+                <!--page 1 --main page--------->
                 <main-page data-route="home"></main-page>
-                <!--page 2 ---folio-page-->
+                <!--page 2 --folio-page-------->
                 <folio-page data-route="folio"></folio-page>
-                <!--page 3 --blog-page----->
+                <!--page 3 --blog-page--------->
                 <blog-page data-route="blog"></blog-page>
-                <!---page 4 --about page---->
+                <!--page 4 --about page-------->
                 <about-page data-route="about"></about-page>
-                <!---page 5 ---contact page -->
+                <!--page 5 --contact page------>
                 <contact-page data-route="contact"></contact-page>
-                <!---page 6 ---blog article page -->
-                <article-page data-route="article"></article-page>
+                <!--page 6 --blog post page---->
+                <article-page data-route="blogpost"></article-page>
+                <!--page 7 --folio post page--->
+                <presenter-page data-route="foliopost"></presenter-page>
             </iron-pages>
 
         </paper-scroll-header-panel>

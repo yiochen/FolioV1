@@ -28,16 +28,17 @@
                         var that = this;
                         this.addEventListener('iron-resize', function () {
                                 console.log(app.route);
-                                if (app.route === "article") {
-
-                                    if (app.params.article === app.currentpost.id) {
-
+                                if (app.route === "blogpost") {
+                                    console.log('route is blogpost');
+                                    if (app.params.post === app.currentpost.id) {
+                                        console.log('updating article page');
                                         that.$.title.innerHTML = app.currentpost.title;
                                         that.$.date.innerHTML = app.currentpost.date;
                                         that.$.blog_body.innerHTML = app.currentpost.body;
                                     } else {
+                                        console.log('cannot find the post');
                                         aja()
-                                            .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=' + app.api + '&id=' + app.params.article)
+                                            .url('http://api.tumblr.com/v2/blog/yiochen.tumblr.com/posts/text?api_key=' + app.api + '&id=' + app.params.post)
                                             .type('jsonp')
                                             .on('success', function (data) {
                                                     var post = {};
