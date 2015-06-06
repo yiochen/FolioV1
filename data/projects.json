@@ -10,5 +10,11 @@
         "description": "Some digital paintings I did in spare time",
         "image": "http://img14.deviantart.net/6bbc/i/2014/286/1/5/bigtree_by_melonboy123-d82q9aw.jpg",
         "url":"data/projects/scenary.html"
+    },{
+        "title": "tMood",
+        "id":"254l5",
+        "description": "Location sensitive mood detector",
+        "image": "https://github.com/yiochen/tMood/blob/master/img/tmood_landing.png?raw=true",
+        "url":"data/projects/tmood.html"
     }
 ]
