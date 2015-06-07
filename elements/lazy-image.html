@@ -38,10 +38,17 @@
                 img.onload = function () {
                     var lazy=poly.$.lazy;
                     lazy.classList.add("onlazyload");
-                    lazy.style.background=poly.imageurl;
+                    lazy.style.background="url(../images/noise.png), "+poly.imageurl;
                     lazy.style.backgroundPosition="bottom right";
-                    lazy.style.backgroundSize="contain"; 
-                    lazy.style.backgroundRepeat="no-repeat";
+                    lazy.style.backgroundSize="auto, contain"; 
+                    lazy.style.backgroundRepeat="repeat,no-repeat";
+                    lazy.style.backgroundBlendMode="multiply";
+//                    background:$background, url("../images/raven head.jpg");
+//    background-repeat: repeat,no-repeat;
+//    background-position: top right;
+//    background-size:auto,contain;
+//   
+//    background-blend-mode: multiply;
                 }
                 img.src = newValue;
                 this.imageurl = 'url(' + newValue + ')';
