@@ -1,40 +1,50 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="lazy-image" attributes="image">
-    <template>
-        <style>
+<dom-module id="lazy-image">
+    <style>
             #lazy {
                 height:100%;
-                display: block;
-                background-position: center;
-                background-size: cover;  
+                width:100%;
             }
             .initial{
                 opacity:0;
-                transition: opacity 0.5s ease;
+                -webkit-transition: opacity 0.5s ease;
+                -moz-transition: opacity 0.5s ease;
+                transition: opacotu 0.5s ease;
+                
             }
             .onlazyload {
                 opacity:1;
-                background: {{imageurl}};
             }
-        </style>
-        <div id="lazy" class="initial" data-src="{{image}}">
+    </style>
+    
+    <template>
+        <div id="lazy" class="initial">
         </div>
-
     </template>
-
-    <script>
+</dom-module>
+<script>
         Polymer({
-            ready: function () {
+            is:"lazy-image",
+            properties:{
+                src:{
+                    type:String,
+                    observer:'srcChanged'
+                }
+            },
+            srcChanged:function(newValue, oldValue){
                 var img = new Image();
                 var poly = this;
                 img.onload = function () {
-                    poly.$.lazy.classList.add("onlazyload");
+                    var lazy=poly.$.lazy;
+                    lazy.classList.add("onlazyload");
+                    lazy.style.background=poly.imageurl;
+                    lazy.style.backgroundPosition="bottom right";
+                    lazy.style.backgroundSize="contain"; 
+                    lazy.style.backgroundRepeat="no-repeat";
                 }
-                img.src = this.image;
-                this.imageurl = 'url(' + img.src + ')';
+                img.src = newValue;
+                this.imageurl = 'url(' + newValue + ')';
             }
         });
     </script>
-
-</polymer-element>

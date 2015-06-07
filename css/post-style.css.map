@@ -2,9 +2,11 @@
   "version": 3,
   "file": "post-style.css",
   "sources": [
-    "post-style.scss"
+    "post-style.scss",
+    "global/_color.scss",
+    "global/_dim.scss"
   ],
   "sourcesContent": [],
-  "mappings": "AAAA,AACI,AAAW,AAEf,AACI,AAAU,AAEd,AACI,AAAQ,AAEZ,AACI,AAAa,AACb,AAAc,AAElB,AAAG,AAAI,AAAI,AAAI,AAAI,AAAI,AACnB,AAAa,AACb,AAAc",
+  "mappings": ";AAEA;EACI,AAAW;;;AAEf;EACI,AAAU;;;AAEd;EACI,AAAQ;;;AAEZ;EACI,AAAa;EACb,AAAc;;;AAElB,AAAG,AAAI,AAAI,AAAI,AAAI,AAAI;EACnB,AAAa;EACb,AAAc;;;AAElB;EACI,ACbQ",
   "names": []
 }

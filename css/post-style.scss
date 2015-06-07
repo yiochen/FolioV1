@@ -1,3 +1,5 @@
+@import "global/_color";
+@import "global/_dim";
 .attention{
     background:green;
 }
@@ -14,4 +16,7 @@ img{
 p, h1, h2, h3, h4, h5, h6{
     padding-left:10px;
     padding-right:10px;
+}
+a{
+    color:$cAttention;
 }

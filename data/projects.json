@@ -1,10 +1,4 @@
 [{
-        "title": "Meetme",
-        "id":"123s",
-        "description": "Shared location tracker for meeting up",
-        "image": "https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg",
-        "url":"data/projects/meetme.html"
-    }, {
         "title": "Digital scenary painting",
         "id":"254l3",
         "description": "Some digital paintings I did in spare time",
