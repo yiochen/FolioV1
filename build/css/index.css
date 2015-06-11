@@ -1,0 +1,108 @@
+/* line 5, F:/Practice/Polymer/portfolio/css/index.scss */
+a {
+  text-decoration: none;
+  color: #676767; }
+
+/* line 9, F:/Practice/Polymer/portfolio/css/index.scss */
+a:hover {
+  color: #676767; }
+
+/* line 12, F:/Practice/Polymer/portfolio/css/index.scss */
+html, body {
+  height: 100%;
+  margin: 0px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #676767; }
+
+/* line 18, F:/Practice/Polymer/portfolio/css/index.scss */
+.fixed {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 23, F:/Practice/Polymer/portfolio/css/index.scss */
+body {
+  background: url(../images/noise.png);
+  background-repeat: repeat; }
+
+/* line 29, F:/Practice/Polymer/portfolio/css/index.scss */
+.window {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed; }
+
+/* line 37, F:/Practice/Polymer/portfolio/css/index.scss */
+.scroll_window {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute; }
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  /* line 47, F:/Practice/Polymer/portfolio/css/index.scss */
+  .hover_highlight:hover {
+    color: aqua; } }
+
+/* line 53, F:/Practice/Polymer/portfolio/css/index.scss */
+.container {
+  height: 100%; }
+
+/* line 58, F:/Practice/Polymer/portfolio/css/index.scss */
+.navbar_text {
+  line-height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block; }
+
+/* line 65, F:/Practice/Polymer/portfolio/css/index.scss */
+.no_margin {
+  margin: 0; }
+
+/* line 68, F:/Practice/Polymer/portfolio/css/index.scss */
+paper-ripple {
+  color: aqua;
+  overflow: hidden; }
+
+/* line 72, F:/Practice/Polymer/portfolio/css/index.scss */
+.whole_container, .background_pic {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+
+/* line 77, F:/Practice/Polymer/portfolio/css/index.scss */
+.background_pic {
+  background: url(../images/noise.png), url("../images/raven head.jpg");
+  background-repeat: repeat,no-repeat;
+  background-position: top right;
+  background-size: auto,contain;
+  background-blend-mode: multiply;
+  z-index: -2; }
+
+/* line 89, F:/Practice/Polymer/portfolio/css/index.scss */
+.navitem {
+  padding: 0 5px;
+  color: #676767;
+  display: inline-block; }
+
+/* line 105, F:/Practice/Polymer/portfolio/css/index.scss */
+.social {
+  position: relative;
+  color: #a9edff; }
+
+/* line 111, F:/Practice/Polymer/portfolio/css/index.scss */
+.space:after {
+  content: '';
+  display: block;
+  height: 40px; }
+
+/* line 116, F:/Practice/Polymer/portfolio/css/index.scss */
+paper-toolbar {
+  --paper-toolbar-background: rgba(255, 255, 255, 0.85);
+  height: 40px; }

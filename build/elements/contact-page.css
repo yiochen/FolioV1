@@ -1,0 +1,19 @@
+/* line 3, F:/Practice/Polymer/portfolio/elements/contact-page.scss */
+.left {
+  padding: 20px 5px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28);
+  margin-top: 20px;
+  text-decoration: none;
+  color: #676767;
+  position: relative; }
+
+/* line 12, F:/Practice/Polymer/portfolio/elements/contact-page.scss */
+.right {
+  margin-top: 20px; }
+
+/* line 17, F:/Practice/Polymer/portfolio/elements/contact-page.scss */
+.social {
+  width: 40px;
+  height: 40px;
+  padding: 0 5px; }

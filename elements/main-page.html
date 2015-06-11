@@ -3,13 +3,13 @@
 <link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
 <link rel="import" href="../elements/blog-card.html">
 <dom-module id="main-page">
-    <link rel="import" type="css" href="../css/normalize.css">
-    <link rel="import" type="css" href="../css/skeleton.css">
-    <link rel="import" type="css" href="../css/index.css">
-    <link rel="import" type="css" href="main-page.css">
+    <link rel="import" type="css" href="../build/css/normalize.css">
+    <link rel="import" type="css" href="../build/css/skeleton.css">
+    <link rel="import" type="css" href="../build/css/index.css">
+    <link rel="import" type="css" href="../build/elements/main-page.css">
     <template>
-        
-        
+
+
         <div class="container move_down">
 
              <div class="greeting">
@@ -57,12 +57,12 @@
                 </div>
             </iron-collapse>
             <!-- accordion end----------------------------------->
-            
+
             </div>
-           
-        
+
+
     </template>
-    
+
 </dom-module>
 <script>
         (function () {
@@ -79,7 +79,7 @@
                     this.col2 = !this.col2;
                 },
                 refresh:function(){
-                    
+
                 }
 
             });

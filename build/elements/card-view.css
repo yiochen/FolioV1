@@ -1,0 +1,51 @@
+/* line 3, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+.card {
+  margin: 0;
+  height: 180px;
+  width: 100%;
+  position: relative;
+  box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28);
+  margin-bottom: 20px;
+  /* Larger than phablet (also point when grid becomes active) */ }
+  /* line 11, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+  .card iron-image {
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+  /* line 16, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+  .card .overlay {
+    background: rgba(255, 255, 255, 0.5);
+    transition: background 0.5s ease;
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+  /* line 23, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+  .card .detail {
+    color: #676767;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: background 0.5s ease; }
+  /* line 30, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+  .card ::content .description {
+    display: none; }
+  /* line 33, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+  .card ::content .description, .card ::content .caption {
+    padding: 0 10px;
+    transition: background 0.5s ease; }
+  @media (min-width: 750px) {
+    .card {
+      height: 300px; }
+      /* line 42, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+      .card ::content .description {
+        display: block; }
+      /* line 45, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+      .card lazy-image:hover {
+        filter: none;
+        -webkit-filter: none; }
+      /* line 49, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+      .card .overlay:hover {
+        background: transparent; }
+        /* line 52, F:/Practice/Polymer/portfolio/elements/card-view.scss */
+        .card .overlay:hover ::content .description, .card .overlay:hover ::content .caption {
+          background: rgba(255, 255, 255, 0.5); } }

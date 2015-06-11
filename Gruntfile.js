@@ -1,0 +1,39 @@
+'use strict';
+module.exports = function (grunt) {
+  grunt.initConfig({
+    autoprefixer:{
+      options:{
+        browsers:['last 2 versions'],
+      },
+      global:{
+        files:[{
+          expand:true,
+          cwd:'css/',
+          src:'**/*.css',
+          dest:'build/css'
+        }],
+      },
+      elements:{
+        files:[{
+          expand:true,
+          cwd:'elements/',
+          src:'**/*.css',
+          dest:'build/elements'
+        }],
+      },
+    },
+    copy:{
+      img:{
+        files:[{
+          expand:true,
+          cwd:'images/',
+          src:['**'],
+          dest:'build/images',
+        }],
+      },
+    },
+  });
+  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.registerTask('default',['autoprefixer','copy']);
+};

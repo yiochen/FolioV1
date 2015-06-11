@@ -1,11 +1,11 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <dom-module id="blog-card">
-    <link rel="import" type="css" href="../css/normalize.css">
-    <link rel="import" type="css" href="../css/skeleton.css">
-    <link rel="import" type="css" href="blog-card.css">
+    <link rel="import" type="css" href="../build/css/normalize.css">
+    <link rel="import" type="css" href="../build/css/skeleton.css">
+    <link rel="import" type="css" href="../build/elements/blog-card.css">
     <template>
-        
+
         <div class="card">
             <div class="row">
                 <div class="eight columns">
@@ -23,7 +23,7 @@
 
     </template>
 
-    
+
 </dom-module>
 <script>
     (function () {
@@ -37,7 +37,7 @@
                     type:String,
                     value:'hello'
                 },
-                    
+
                 date:{
                     type:String,
                     value:"12/5"
@@ -47,7 +47,7 @@
                     value:"Hello world"
                 }
             }
-           
+
         });
     })();
 </script>

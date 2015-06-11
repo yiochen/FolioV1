@@ -2,10 +2,10 @@
 <link rel="import" href="../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
 <!--<link rel="import" href="../bower_components/iron-image/iron-image.html">-->
 <dom-module id="presenter-page">
-    <link rel="import" type="css" href="../css/normalize.css">
-    <link rel="import" type="css" href="../css/skeleton.css">
-    <link rel="import" type="css" href="../css/index.css">
-    <link rel="import" type="css" href="article-page.css">
+    <link rel="import" type="css" href="../build/css/normalize.css">
+    <link rel="import" type="css" href="../build/css/skeleton.css">
+    <link rel="import" type="css" href="../build/css/index.css">
+    <link rel="import" type="css" href="../build/elements/article-page.css">
     <template>
         <div class="container content">
             <div class="row page_content" id="stage">
@@ -20,7 +20,7 @@
             ready: function () {
                 var that = this;
                 console.log('setting up folio-update listener');
-                
+
                 that.addEventListener('iron-resize', function () {
                     document.addEventListener('folio-update',function(e){
                         console.log('the project list is updated, update the current post');
@@ -31,13 +31,13 @@
                         if (app.route === "foliopost") {
                         var noproject="data/projects/noproject.html";
                         console.log("the currentpost url is "+app.currentpost.url);
-                        
+
                         if (!app.currentpost.url || (app.currentpost.url===noproject)) {
                             console.log("now the url is "+app.currentpost.url+" and noprojet is "+noproject);
                             app.currentpost.url = noproject;
                             console.log("projects are "+app.projects);
                             for (var project of app.projects) {
-                                
+
                                 if (project.id === app.params.post) {
                                     app.currentpost.url = project.url;
                                     break;
