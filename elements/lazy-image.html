@@ -11,13 +11,13 @@
                 -webkit-transition: opacity 0.5s ease;
                 -moz-transition: opacity 0.5s ease;
                 transition: opacotu 0.5s ease;
-                
+
             }
             .onlazyload {
                 opacity:1;
             }
     </style>
-    
+
     <template>
         <div id="lazy" class="initial">
         </div>
@@ -33,21 +33,22 @@
                 }
             },
             srcChanged:function(newValue, oldValue){
+                if (!newValue || newValue==="") return;
                 var img = new Image();
                 var poly = this;
                 img.onload = function () {
                     var lazy=poly.$.lazy;
                     lazy.classList.add("onlazyload");
                     lazy.style.background="url(../images/noise.png), "+poly.imageurl;
-                    lazy.style.backgroundPosition="bottom right";
-                    lazy.style.backgroundSize="auto, contain"; 
+                    lazy.style.backgroundPosition="top right";
+                    lazy.style.backgroundSize="auto, contain";
                     lazy.style.backgroundRepeat="repeat,no-repeat";
                     lazy.style.backgroundBlendMode="multiply";
 //                    background:$background, url("../images/raven head.jpg");
 //    background-repeat: repeat,no-repeat;
 //    background-position: top right;
 //    background-size:auto,contain;
-//   
+//
 //    background-blend-mode: multiply;
                 }
                 img.src = newValue;
