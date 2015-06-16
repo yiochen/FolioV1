@@ -1,15 +1,1 @@
-/* line 3, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-.page_intro div {
-  background: rgba(0, 0, 0, 0.5);
-  color: #989898;
-  box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28);
-  width: 80%;
-  padding: 20px 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 80px; }
-
-@media (min-width: 550px) {
-  /* line 19, F:/Practice/Polymer/portfolio/elements/project-page.scss */
-  .page_intro div {
-    width: 100%; } }
+.page_intro div{background:rgba(0,0,0,.5);color:#989898;box-shadow:10px 10px 36px -9px rgba(0,0,0,.28);width:80%;padding:20px 10px;margin-left:auto;margin-right:auto;margin-bottom:80px}@media (min-width:550px){.page_intro div{width:100%}}
