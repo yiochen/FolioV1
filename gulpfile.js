@@ -4,6 +4,7 @@ var connect=require('gulp-connect');
 var minifyCss=require('gulp-minify-css');
 var autoprefixer=require('gulp-autoprefixer');
 var toJson=require('gulp-to-json');
+var del=require('del');
 
 gulp.task('vul',function(){
   return gulp.src('elements.html')
@@ -14,7 +15,12 @@ gulp.task('vul',function(){
   }))
   .pipe(gulp.dest('build'));
 });
-gulp.task('image',function(){
+gulp.task('clean:images',function(cb){
+  del([
+    'build/images/**/*'
+  ],cb);
+});
+gulp.task('image',['clean:images'],function(){
   return gulp.src('images/**/*')
   .pipe(gulp.dest('build/images'));
 });
