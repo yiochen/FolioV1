@@ -1,4 +1,30 @@
+//out: redesign.css
+@import "global/_color";
+
 .fullpage {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    background: $cPrimary;
+}
+.flex{
+  display:flex;
+}
+.center_items{
+  align-items:center;
+}
+.vertical{
+  display:flex;
+  flex-direction:column;
+}
+.horizontal{
+  display:flex;
+  flex-direction:row;
+}
+.center {
+    justify-content:center;
+}
+.stretch{
+  flex:1;
+}
+.border{
+  border:1px solid red;
 }
