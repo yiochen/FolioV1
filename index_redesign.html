@@ -50,28 +50,49 @@
 
   <!--  <template is="dom-bind" id="app">-->
 
-        <div class="fullpage">
-            <div class="container vertical">
-              <div class="row border stretch flex center_items">
-                <div class="six columns border ">
+        <header class="fullpage">
+            <div class="container vertical center stretch">
+              <div class="row border">
+                <div class="six columns border">
                   <div>Hello there</div>
                   <div>I am a New York based Designer/Developers</div>
                 </div>
-                <div class="three columns border">
+                <div class="six columns border main_img">
                     Image here
                 </div>
               </div>
-
-              <div>
-                Just a little bit foot note;
-              </div>
             </div>
+            <div class="arrow"></div>
+        </header>
 
-        </div>
-        <div>ahah</div>
-
+        <section>
+          <div class="container">
+            <div class="row border">
+            hey
+            </div>
+            <div class="row border">
+            hey
+            </div>
+            <div class="row border">
+            hey
+            </div>
+          </div>
+        </section>
+        <footer class="fullpage">
+          <div class="container">
+          </div>
+        </footer>
+        <section class="container_fixed" style="top:0;">
+          <div class="logo">
+            <h1>E</h1>
+          </div>
+        </section>
   <!--  </template>-->
-    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <script type="text/javascript">
+    var s=skrollr.init();
+    </script>
 </body>
 
 </html>
