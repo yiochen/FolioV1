@@ -1,6 +1,8 @@
 //out: redesign.css
 @import "global/_color";
-
+*{
+  color:white;
+}
 .fullpage {
     height: 100vh;
 
@@ -84,4 +86,14 @@ $arrow_size:15px;
   bottom:$arrow_size*2;
   left:50%;
   margin:-$arrow_size;
+}
+.profile{
+  position:relative;
+  border-radius:50%;
+  height:100px;
+  width:100px;
+  background-image:url(../img/bcg_slide-4.jpg);
+  background-position: center;
+  background-size: cover;
+  margin:0 auto;
 }

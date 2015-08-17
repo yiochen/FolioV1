@@ -1,3 +1,6 @@
+* {
+  color: white; }
+
 .fullpage {
   height: 100vh; }
 
@@ -50,7 +53,7 @@ footer {
   position: relative;
   width: 50px;
   height: 60px;
-  background-color: #F7BE81;
+  background-color: #FF9966;
   display: flex;
   justify-content: center; }
   .logo h1 {
@@ -75,3 +78,13 @@ footer {
   bottom: 30px;
   left: 50%;
   margin: -15px; }
+
+.profile {
+  position: relative;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-image: url(../img/bcg_slide-4.jpg);
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto; }

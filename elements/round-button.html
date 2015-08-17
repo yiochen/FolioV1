@@ -1,0 +1,38 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<dom-module id="round-button" noscript>
+  <link rel="import" type="css" href="../css/normalize.css">
+  <link rel="import" type="css" href="../css/skeleton.css">
+  <link rel="import" type="css" href="../css/index.css">
+  <style is="custom-style">
+    #button{
+      box-sizing: border-box;
+      border-radius:60px;
+      display:inline-block;
+      padding-left:20px;
+      padding-right:20px;
+      color:white;
+    }
+
+  </style>
+  <template>
+    <div id="button">
+      <content><content>
+    </div>
+  </template>
+  <script>
+  Polymer({
+    is:'round-button',
+    properties:{
+      color:String,
+      cutout:Boolean
+    },
+    ready:function(){
+      this.$.button.style.border="1px solid "+this.color;
+      this.$.button.style.borderRadius=this.$.button.offsetHeight/2;
+      if (!this.cutout) {
+        this.$.button.style.backgroundColor=this.color;
+      }
+    }
+  });
+  </script>
+</dom-module>
