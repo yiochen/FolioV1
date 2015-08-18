@@ -79,6 +79,9 @@ footer {
   left: 50%;
   margin: -15px; }
 
+#projects {
+  margin-top: 120px; }
+
 .profile {
   position: relative;
   border-radius: 50%;

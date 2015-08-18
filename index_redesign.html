@@ -50,12 +50,17 @@
 
   <!--  <template is="dom-bind" id="app">-->
 
-        <header class="fullpage">
+        <header class="fullpage"
+        data-top="background-position:0% 0%"
+        data-top-bottom="background-position:50% 50%">
             <div class="container vertical center stretch">
-              <div class="row border">
+              <div class="row border"
+              data-start="opacity:1;transform:translate(0px, 0px);"
+              data-_vh-start="opacity:0;transform:translateY(0px, 200px);"
+              >
                 <div class="six columns border">
-                  <div>Hello there</div>
-                  <div>I am a New York based Designer/Developers</div>
+                  <h1>Hello there</h1>
+                  <h3>I am a New York based Designer/Developers</h3>
                   <round-button color="#FF9966">Blog</round-button>
                   <round-button color="#FF9966" cutout>About</round-button>
                 </div>
@@ -68,8 +73,8 @@
             <div class="arrow"></div>
         </header>
 
-        <section>
-          <div class="container">
+        <section class="portfolio">
+          <div class="container" id="projects">
             <div class="row">
               <card-view background="img/bcg_slide-2.jpg">
                 <h1 class="caption">Hello world</h1>
@@ -130,7 +135,13 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/skrollr.min.js"></script>
     <script type="text/javascript">
-    var s=skrollr.init();
+    var s=skrollr.init(
+      {
+        constants:{
+          vh:window.innerHeight
+        }
+      }
+    );
     </script>
 </body>
 
