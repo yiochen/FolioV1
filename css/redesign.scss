@@ -43,17 +43,18 @@
 }
 
 header{
-    background-image: url(../img/bcg_slide-1.jpg);
+    background-image: url(../images/landing.png);
     background-size:cover;
     background-position: top;
     background-attachment: fixed;
 }
 footer{
-  background-image:  url(../img/bcg_slide-1.jpg);
+  padding-top:50px;
+  background-image:  url(../images/footer.png);
   background-size:cover;
   background-position: top;
   background-attachment: fixed;
-
+  box-sizing:border-box;
 }
 .logo{
   position: relative;
@@ -87,16 +88,18 @@ $arrow_size:15px;
   left:50%;
   margin:-$arrow_size;
 }
-#projects{
-  margin-top: 120px;
+.portfolio{
+  padding-top:120px;
+  padding-bottom:100px;
 }
 .profile{
   position:relative;
   border-radius:50%;
   height:100px;
   width:100px;
-  background-image:url(../img/bcg_slide-4.jpg);
+  background-image:url(../images/yiou.jpg);
   background-position: center;
   background-size: cover;
   margin:0 auto;
+
 }
