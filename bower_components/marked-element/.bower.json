@@ -38,6 +38,6 @@
     "commit": "d7be312805f071335c843b6bf7248b89bcd40b4e"
   },
   "_source": "git://github.com/PolymerElements/marked-element.git",
-  "_target": "^1.0.0",
+  "_target": "1.0.0",
   "_originalSource": "PolymerElements/marked-element"
 }

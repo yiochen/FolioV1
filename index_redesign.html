@@ -30,6 +30,10 @@
             height: 40px;
             box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28);
         }
+        paper-dialog{
+          --paper-dialog-background-color:rgba(0,0,0,0.55);
+          border-radius:10px;
+        }
     </style>
 
 
@@ -125,10 +129,26 @@
 
 
         <section class="container_fixed" style="top:0;">
-          <div class="logo">
-            <h1>E</h1>
+          <div class="logo" id="menu">
+            <div id="logobox" onclick="onLogoClicked(event)">
+              <h1>E</h1>
+            </div>
+            <div id="slideout">
+              <div class="menu_item">home</div><!--
+              --><div class="menu_item">projects</div><!--
+              --><div class="menu_item">blog</div><!--
+              --><div class="menu_item">about</div>
+            </div>
           </div>
         </section>
+        <paper-dialog id="overlay_menu" with-Backdrop>
+          <h2>Dialog Title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute</p>
+        </paper-dialog>
+
   <!--  </template>-->
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/skrollr.min.js"></script>
@@ -140,7 +160,14 @@
         }
       }
     );
+
+    function onLogoClicked(event){
+      dialog= document.getElementById("overlay_menu");
+      if (dialog) {
+        dialog.open();
+      }
+    }
     </script>
-</body>
+</body><p
 
 </html>

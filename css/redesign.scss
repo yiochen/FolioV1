@@ -1,5 +1,8 @@
 //out: redesign.css
 @import "global/_color";
+$logobox_width:50px;
+$logobox_height:60px;
+
 *{
   color:white;
 }
@@ -7,6 +10,7 @@
     height: 100vh;
 
 }
+
 .container_fixed{
   position: fixed;
   width: 100%;
@@ -21,9 +25,7 @@
 .flex{
   display:flex;
 }
-.center_items{
-  align-items:center;
-}
+
 .vertical{
   display:flex;
   flex-direction:column;
@@ -32,9 +34,13 @@
   display:flex;
   flex-direction:row;
 }
+.center_items{
+  align-items:center;
+}
 .center {
     justify-content:center;
 }
+
 .stretch{
   flex:1;
 }
@@ -58,15 +64,59 @@ footer{
 }
 .logo{
   position: relative;
-  width:50px;
-  height:60px;
+  width:$logobox_width;
+  padding:0;
+  height:$logobox_height;
   background-color:$cAccent;
-  display:flex;
-  justify-content:center;
-  h1{
-    color:white;
+  //hidden overflow is very important, without it, the menu item would be clickable even when opacity=0!!!
+  overflow:hidden;
+  #logobox{
+    position:relative;
+    width:$logobox_width;
+    height:100%;
+  }
+  #slideout{
+    display:inline-block;
+    position:absolute;
+    left:$logobox_width;
+    right:0;
+    top:0;
+    bottom:0;
+    //opacity:0;
+    transition:opacity 0.5s ease;
   }
 }
+
+#menu{
+  transition:all 0.5s ease-in-out;
+}
+.menu_item{
+  display:inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: $logobox_height;
+  height:100%;
+  width:(960px - $logobox_width) / 4;
+  margin:0;
+  transition:background-color 0.5s ease;
+}
+.menu_item:hover{
+  background-color:lighten($cAccent,20%);
+  transition:background-color 0.5s ease;
+}
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  #menu:hover{
+    width:100%;
+    transition:all 0.5s ease-in-out;
+    #slideout{
+      opacity:1;
+      transition:opacity 0.5s ease;
+      transition-delay:0.5s;
+    }
+  }
+}
+
 .main_img{
   min-width:200px;
   min-height:200px;
@@ -91,6 +141,7 @@ $arrow_size:15px;
 .portfolio{
   padding-top:120px;
   padding-bottom:100px;
+  background:#444444;
 }
 .profile{
   position:relative;
