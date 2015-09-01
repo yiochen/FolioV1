@@ -23,13 +23,13 @@
     <link rel="stylesheet" href="css/redesign.css">
     <link rel="stylesheet" href="build/css/normalize.css">
     <link rel="stylesheet" href="build/css/skeleton.css">
-    <link rel="stylesheet" href="build/css/index.css">
+    <!-- <link rel="stylesheet" href="build/css/index.css"> -->
     <style is="custom-style">
-        paper-toolbar {
+        /*paper-toolbar {
             --paper-toolbar-background: rgba(255, 255, 255, 0.85);
             height: 40px;
             box-shadow: 10px 10px 36px -9px rgba(0, 0, 0, 0.28);
-        }
+        }*/
         paper-dialog{
           --paper-dialog-background-color:rgba(0,0,0,0.55);
           border-radius:10px;
@@ -38,11 +38,11 @@
 
 
 
-    <link rel="import" href="build/elements.html">
+    <link rel="import" href="redesign_elements.html">
 
     <!--to be changed to js/aja.min.js-->
-    <script src="js/aja.min.js"></script>
-    <script src="js/preload.js"></script>
+    <!-- <script src="js/aja.min.js"></script> -->
+    <!-- <script src="js/preload.js"></script> -->
     <!-- Favicon
 
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -54,21 +54,20 @@
 
   <!--  <template is="dom-bind" id="app">-->
 
-        <header class="fullpage"
-        data-top="background-position:0% 0%"
-        data-top-bottom="background-position:50% 50%">
-            <div class="container vertical center stretch">
-              <div class="row "
-              data-start="opacity:1;transform:translate(0px, 0px);"
-              data-_vh-start="opacity:0;transform:translateY(0px, 200px);"
-              >
-                <div class="six columns">
+        <header class="fullpage">
+          <!--data-top="background-position:0% 0%"
+          data-top-bottom="background-position:50% 50%"-->
+            <div class="container vertical center stretch" id="main_header">
+              <div class="row ">
+                <!--data-start="opacity:1;transform:translate(0px, 0px);"
+                data-_vh-start="opacity:0;transform:translateY(0px, 200px);"-->
+                <div class="eight columns" id="jumbo">
                   <h1>Hello there</h1>
                   <h3>I am a New York based Designer/Developers</h3>
                   <round-button color="#FF9966">Blog</round-button>
                   <round-button color="#FF9966" cutout>About</round-button>
-                </div>
-                <div class="six columns main_img">
+                </div><!--
+                --><div class="four columns main_img">
                     Image here
                 </div>
               </div>
@@ -80,25 +79,25 @@
         <section class="portfolio">
           <div class="container">
             <div class="row">
-              <card-view background="img/bcg_slide-2.jpg">
+              <card-view background="images/landing.png">
                 <h1 class="caption">Hello world</h1>
                 <h2 class="description">this is just an example</h2>
               </card-view>
             </div>
             <div class="row">
-              <card-view background="img/bcg_slide-2.jpg">
+              <card-view background="images/landing.png">
                 <h1 class="caption">Hello world</h1>
                 <h2 class="description">this is just an example</h2>
               </card-view>
             </div>
             <div class="row">
-              <card-view background="img/bcg_slide-2.jpg">
+              <card-view background="images/landing.png">
                 <h1 class="caption">Hello world</h1>
                 <h2 class="description">this is just an example</h2>
               </card-view>
             </div>
             <div class="row">
-              <card-view background="img/bcg_slide-2.jpg">
+              <card-view background="images/landing.png">
                 <h1 class="caption">Hello world</h1>
                 <h2 class="description">this is just an example</h2>
               </card-view>
@@ -150,16 +149,16 @@
         </paper-dialog>
 
   <!--  </template>-->
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <!-- <script type="text/javascript" src="js/app.js"></script> -->
+    <!-- <script type="text/javascript" src="js/skrollr.min.js"></script> -->
     <script type="text/javascript">
-    var s=skrollr.init(
-      {
-        constants:{
-          vh:window.innerHeight
-        }
-      }
-    );
+    // var s=skrollr.init(
+    //   {
+    //     constants:{
+    //       vh:window.innerHeight
+    //     }
+    //   }
+    // );
 
     function onLogoClicked(event){
       dialog= document.getElementById("overlay_menu");
@@ -168,6 +167,6 @@
       }
     }
     </script>
-</body><p
+</body>
 
 </html>

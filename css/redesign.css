@@ -4,6 +4,13 @@
 .fullpage {
   height: 100vh; }
 
+#main_header {
+  height: 100%; }
+
+#jumbo {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px; }
+
 .container_fixed {
   position: fixed;
   width: 100%;
@@ -45,7 +52,7 @@ header {
 
 footer {
   padding-top: 50px;
-  background-image: url(../images/footer.png);
+  background: #47CC89;
   background-size: cover;
   background-position: top;
   background-attachment: fixed;

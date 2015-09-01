@@ -12,6 +12,7 @@ gulp.task('vul',function(){
     abspath:'',
     stripComments:true,
     inlineScripts:true,
+    inlineCss:true,
   }))
   .pipe(gulp.dest('build'));
 });
