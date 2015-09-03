@@ -7,10 +7,6 @@
 #main_header {
   height: 100%; }
 
-#jumbo {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px; }
-
 .container_fixed {
   position: fixed;
   width: 100%;
@@ -45,14 +41,14 @@
   border: 1px solid red; }
 
 header {
-  background-image: url(../images/landing.png);
+  background-image: url(../images/cloud.png);
   background-size: cover;
   background-position: top;
   background-attachment: fixed; }
 
 footer {
   padding-top: 50px;
-  background: #47CC89;
+  background: #9fa8a3;
   background-size: cover;
   background-position: top;
   background-attachment: fixed;
@@ -63,7 +59,7 @@ footer {
   width: 50px;
   padding: 0;
   height: 60px;
-  background-color: #FF9966;
+  background-color: #c5d5cb;
   overflow: hidden; }
   .logo #logobox {
     position: relative;
@@ -92,7 +88,7 @@ footer {
   transition: background-color 0.5s ease; }
 
 .menu_item:hover {
-  background-color: #ffddcc;
+  background-color: white;
   transition: background-color 0.5s ease; }
 
 /* Larger than desktop */
@@ -119,7 +115,7 @@ footer {
   height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 15px solid pink;
+  border-top: 15px solid #c5d5cb;
   position: absolute;
   bottom: 30px;
   left: 50%;
@@ -128,7 +124,7 @@ footer {
 .portfolio {
   padding-top: 120px;
   padding-bottom: 100px;
-  background: #444444; }
+  background: white; }
 
 .profile {
   position: relative;

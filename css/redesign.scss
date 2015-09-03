@@ -14,8 +14,8 @@ $logobox_height:60px;
   height:100%;
 }
 #jumbo{
-  background:rgba(0,0,0,0.5);
-  padding:20px;
+  //background:transparentize($cAccent,0.5);;
+  //padding:20px;
 }
 .container_fixed{
   position: fixed;
@@ -55,14 +55,14 @@ $logobox_height:60px;
 }
 
 header{
-    background-image: url(../images/landing.png);
+    background-image: url(../images/cloud.png);
     background-size:cover;
     background-position: top;
     background-attachment: fixed;
 }
 footer{
   padding-top:50px;
-  background:$cMint;
+  background:$cPrimary;
   background-size:cover;
   background-position: top;
   background-attachment: fixed;
@@ -138,7 +138,7 @@ $arrow_size:15px;
 	height: 0;
 	border-left: $arrow_size solid transparent;
 	border-right: $arrow_size solid transparent;
-	border-top: $arrow_size solid pink;
+	border-top: $arrow_size solid $cAccent;
   position:absolute;
   bottom:$arrow_size*2;
   left:50%;
@@ -147,7 +147,7 @@ $arrow_size:15px;
 .portfolio{
   padding-top:120px;
   padding-bottom:100px;
-  background:#444444;
+  background:white;
 }
 .profile{
   position:relative;
